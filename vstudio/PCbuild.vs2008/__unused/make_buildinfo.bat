@@ -1,0 +1,2 @@
+@CALL "C:\Progs\Devel\IDE\VS2008\Common7\IDE\..\..\VC\vcvarsall.bat" amd64
+@cl.exe -c -D_WIN32 -DUSE_DL_EXPORT -D_WINDOWS -D_WINDLL -D_DEBUG -MDd -D_WIN64 -DHGBRANCH=\"tags/v3.6.1rc1~2620^2~773^2~2\" -DHGTAG=\"tags/v3.5.0\" -DHGVERSION=\"2e789a1f1d\" ..\..\cpython\Modules\getbuildinfo.c -Fo"D:\Projects\Python\vstudio\PCbuild.vs2008\x64-temp-Debug\pythoncore\getbuildinfo.o" -I..\..\externals\cpython89-deps\c99compat\include -I..\..\cpython\Include -I..\..\cpython\PC
