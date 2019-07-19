@@ -1,0 +1,21 @@
+[submodule "cpython"]
+	path = cpython
+	url = https://github.com/python/cpython.git
+[submodule "externals/cpython89-deps"]
+	path = externals/cpython89-deps
+	url = https://github.com/Cordic77/cpython89-deps.git
+[submodule "externals/github/openssl"]
+	path = externals/github/openssl
+	url = https://github.com/openssl/openssl.git
+[submodule "externals/github/tcltk/tcl"]
+	path = externals/github/tcltk/tcl
+	url = https://github.com/tcltk/tcl.git
+[submodule "externals/github/tcltk/tk"]
+	path = externals/github/tcltk/tk
+	url = https://github.com/tcltk/tk.git
+[submodule "externals/github/xz"]
+	path = externals/github/xz
+	url = https://github.com/xz-mirror/xz.git
+[submodule "externals/github/zlib"]
+	path = externals/github/zlib
+	url = https://github.com/madler/zlib.git
