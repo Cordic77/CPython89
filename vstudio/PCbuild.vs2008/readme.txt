@@ -48,7 +48,7 @@ Debug
     Used to build Python with extra debugging capabilities, equivalent
     to using ./configure --with-pydebug on UNIX.  All binaries built
     using this configuration have "_d" added to their name:
-    python35_d.dll, python_d.exe, parser_d.pyd, and so on.  Both the
+    python36_d.dll, python_d.exe, parser_d.pyd, and so on.  Both the
     build and rt (run test) batch files in this directory accept a -d
     option for debug builds.  If you are building Python to help with
     development of CPython, you will most likely use this configuration.
@@ -169,7 +169,7 @@ _lzma
     Homepage:
         http://tukaani.org/xz/
 _ssl
-    Python wrapper for version 1.0.2k of the OpenSSL secure sockets
+    Python wrapper for version 1.0.2j of the OpenSSL secure sockets
     library, which is built by ssl.vcxproj
     Homepage:
         http://www.openssl.org/
@@ -204,11 +204,11 @@ _ssl
     functionality to _ssl or _hashlib. They will not clean up their output
     with the normal Clean target; CleanAll should be used instead.
 _sqlite3
-    Wraps SQLite 3.8.11.0, which is itself built by sqlite3.vcxproj
+    Wraps SQLite 3.14.2.0, which is itself built by sqlite3.vcxproj
     Homepage:
         http://www.sqlite.org/
 _tkinter
-    Wraps version 8.6.4 of the Tk windowing system.
+    Wraps version 8.6.6 of the Tk windowing system.
     Homepage:
         http://www.tcl.tk/
 

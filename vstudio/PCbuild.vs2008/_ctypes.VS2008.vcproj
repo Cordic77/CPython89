@@ -587,6 +587,70 @@
 			<File
 				RelativePath="..\..\cpython\Modules\_ctypes\cfield.c"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						ForcedIncludeFiles="&quot;$(ProjectDir)..\..\externals\cpython89-deps\c99compat\include\stdbool.h&quot;"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						ForcedIncludeFiles="&quot;$(ProjectDir)..\..\externals\cpython89-deps\c99compat\include\stdbool.h&quot;"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						ForcedIncludeFiles="&quot;$(ProjectDir)..\..\externals\cpython89-deps\c99compat\include\stdbool.h&quot;"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						ForcedIncludeFiles="&quot;$(ProjectDir)..\..\externals\cpython89-deps\c99compat\include\stdbool.h&quot;"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PGInstrument|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						ForcedIncludeFiles="&quot;$(ProjectDir)..\..\externals\cpython89-deps\c99compat\include\stdbool.h&quot;"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PGInstrument|x64"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						ForcedIncludeFiles="&quot;$(ProjectDir)..\..\externals\cpython89-deps\c99compat\include\stdbool.h&quot;"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PGUpdate|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						ForcedIncludeFiles="&quot;$(ProjectDir)..\..\externals\cpython89-deps\c99compat\include\stdbool.h&quot;"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PGUpdate|x64"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						ForcedIncludeFiles="&quot;$(ProjectDir)..\..\externals\cpython89-deps\c99compat\include\stdbool.h&quot;"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\Modules\_ctypes\libffi_msvc\ffi.c"

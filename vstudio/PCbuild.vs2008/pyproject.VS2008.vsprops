@@ -39,7 +39,7 @@
 	/>
 	<UserMacro
 		Name="PyDllName"
-		Value="python35"
+		Value="python36"
 	/>
 	<UserMacro
 		Name="PythonExe"
@@ -67,7 +67,7 @@
 	/>
 	<UserMacro
 		Name="zlibDir"
-		Value="$(externalsDir)\_github\zlib"
+		Value="$(externalsDir)\github\zlib"
 	/>
 	<UserMacro
 		Name="opensslDir"
