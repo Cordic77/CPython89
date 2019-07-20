@@ -524,10 +524,12 @@ PySet_New
 PySet_Pop
 PySet_Size
 PySet_Type
+PySlice_AdjustIndices
 PySlice_GetIndices
 PySlice_GetIndicesEx
 PySlice_New
 PySlice_Type
+PySlice_Unpack
 PySortWrapper_Type
 PyState_AddModule
 PyState_FindModule

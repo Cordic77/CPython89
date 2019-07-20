@@ -1235,7 +1235,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\posixmodule.c"
+				RelativePath="..\Modules\posixmodule.c"
 				>
 			</File>
 			<File
