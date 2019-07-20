@@ -589,7 +589,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\_ctypes\libffi_msvc\ffi.c"
+				RelativePath="..\Modules\_ctypes\libffi_msvc\ffi.c"
 				>
 			</File>
 			<File
