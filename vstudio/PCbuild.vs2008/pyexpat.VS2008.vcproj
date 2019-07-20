@@ -547,6 +547,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\cpython\Modules\expat\loadlibrary.c"
+				>
+			</File>
+			<File
 				RelativePath="..\..\cpython\Modules\expat\xmlparse.c"
 				>
 			</File>
