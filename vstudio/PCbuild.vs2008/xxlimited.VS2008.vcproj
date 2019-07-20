@@ -43,7 +43,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="NDEBUG;_WIN32;_WINDLL;Py_LIMITED_API=0x03050000;$(NOINHERIT)"
+				PreprocessorDefinitions="NDEBUG;_WIN32;_WINDLL;Py_LIMITED_API=0x03060000;$(NOINHERIT)"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -109,7 +109,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="NDEBUG;_WIN32;_WIN64;_WINDLL;Py_LIMITED_API=0x03050000;$(NOINHERIT)"
+				PreprocessorDefinitions="NDEBUG;_WIN32;_WIN64;_WINDLL;Py_LIMITED_API=0x03060000;$(NOINHERIT)"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -174,7 +174,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="Py_LIMITED_API=0x03050000"
+				PreprocessorDefinitions="Py_LIMITED_API=0x03060000"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -238,7 +238,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="Py_LIMITED_API=0x03050000"
+				PreprocessorDefinitions="Py_LIMITED_API=0x03060000"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -302,7 +302,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="Py_LIMITED_API=0x03050000"
+				PreprocessorDefinitions="Py_LIMITED_API=0x03060000"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -366,7 +366,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="Py_LIMITED_API=0x03050000"
+				PreprocessorDefinitions="Py_LIMITED_API=0x03060000"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"

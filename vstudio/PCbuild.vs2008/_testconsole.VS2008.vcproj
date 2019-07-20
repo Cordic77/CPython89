@@ -2,9 +2,11 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9,00"
-	Name="pythonw"
-	ProjectGUID="{F4229CC3-873C-49AE-9729-DD308ED4CD4A}"
-	TargetFrameworkVersion="131072"
+	Name="_testconsole"
+	ProjectGUID="{B244E787-C445-441C-BDF4-5A4F1A3A1E51}"
+	RootNamespace="_testconsole"
+	Keyword="Win32Proj"
+	TargetFrameworkVersion="196613"
 	>
 	<Platforms>
 		<Platform
@@ -19,10 +21,8 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			ConfigurationType="1"
-			InheritedPropertySheets=".\pyproject.VS2008.vsprops;.\debug.VS2008.vsprops"
-			UseOfMFC="0"
-			ATLMinimizesCRunTimeLibraryUsage="false"
+			ConfigurationType="2"
+			InheritedPropertySheets=".\pyd_d.VS2008.vsprops"
 			CharacterSet="0"
 			>
 			<Tool
@@ -42,32 +42,21 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				Optimization="0"
-				EnableIntrinsicFunctions="false"
-				AdditionalIncludeDirectories=""
-				PreprocessorDefinitions="_WINDOWS"
-				RuntimeLibrary="3"
-				CompileAs="0"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_DEBUG"
-				Culture="1033"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="msvcrtd.lib"
-				OutputFile="$(OutDir)\pythonw_d.exe"
+				AdditionalDependencies="msvcrtd.lib oldnames.lib c99compatd_vs2008.lib"
+				AdditionalLibraryDirectories="&quot;$(c99compatDir)\lib\dll-ansi-x86-debug&quot;"
 				IgnoreAllDefaultLibraries="true"
-				StackReserveSize="2000000"
-				BaseAddress="0x1d000000"
-				TargetMachine="1"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -93,10 +82,9 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			ConfigurationType="1"
-			InheritedPropertySheets=".\pyproject.VS2008.vsprops;.\x64.VS2008.vsprops;.\debug.VS2008.vsprops"
-			UseOfMFC="0"
-			ATLMinimizesCRunTimeLibraryUsage="false"
+			ConfigurationType="2"
+			InheritedPropertySheets=".\pyd_d.VS2008.vsprops;.\x64.VS2008.vsprops"
+			CharacterSet="0"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -116,31 +104,21 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				Optimization="0"
-				EnableIntrinsicFunctions="false"
-				AdditionalIncludeDirectories=""
-				PreprocessorDefinitions="_WINDOWS"
-				RuntimeLibrary="3"
-				CompileAs="0"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_DEBUG"
-				Culture="1033"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="msvcrtd.lib"
-				OutputFile="$(OutDir)\pythonw_d.exe"
+				AdditionalDependencies="msvcrtd.lib oldnames.lib c99compatd_vs2008.lib"
+				AdditionalLibraryDirectories="&quot;$(c99compatDir)\lib\dll-ansi-x64-debug&quot;"
 				IgnoreAllDefaultLibraries="true"
-				StackReserveSize="2000000"
-				BaseAddress="0x1d000000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -166,10 +144,10 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			ConfigurationType="1"
-			InheritedPropertySheets=".\pyproject.VS2008.vsprops;.\release.VS2008.vsprops"
-			UseOfMFC="0"
-			ATLMinimizesCRunTimeLibraryUsage="false"
+			ConfigurationType="2"
+			InheritedPropertySheets=".\pyd.VS2008.vsprops"
+			CharacterSet="0"
+			WholeProgramOptimization="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -188,32 +166,21 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories=""
-				PreprocessorDefinitions="_WINDOWS"
-				StringPooling="true"
-				RuntimeLibrary="2"
-				EnableFunctionLevelLinking="true"
-				CompileAs="0"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG"
-				Culture="1033"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="msvcrt.lib"
-				OutputFile="$(OutDir)\pythonw.exe"
+				AdditionalDependencies="msvcrt.lib oldnames.lib c99compat_vs2008.lib"
+				AdditionalLibraryDirectories="&quot;$(c99compatDir)\lib\dll-ansi-x86-release&quot;"
 				IgnoreAllDefaultLibraries="true"
-				StackReserveSize="2000000"
-				BaseAddress="0x1d000000"
-				TargetMachine="1"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -239,10 +206,10 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			ConfigurationType="1"
-			InheritedPropertySheets=".\pyproject.VS2008.vsprops;.\x64.VS2008.vsprops;.\release.VS2008.vsprops"
-			UseOfMFC="0"
-			ATLMinimizesCRunTimeLibraryUsage="false"
+			ConfigurationType="2"
+			InheritedPropertySheets=".\pyd.VS2008.vsprops;.\x64.VS2008.vsprops"
+			CharacterSet="0"
+			WholeProgramOptimization="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -262,31 +229,21 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories=""
-				PreprocessorDefinitions="_WINDOWS"
-				StringPooling="true"
-				RuntimeLibrary="2"
-				EnableFunctionLevelLinking="true"
-				CompileAs="0"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG"
-				Culture="1033"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="msvcrt.lib"
-				OutputFile="$(OutDir)\pythonw.exe"
+				AdditionalDependencies="msvcrt.lib oldnames.lib c99compat_vs2008.lib"
+				AdditionalLibraryDirectories="&quot;$(c99compatDir)\lib\dll-ansi-x64-release&quot;"
 				IgnoreAllDefaultLibraries="true"
-				StackReserveSize="2000000"
-				BaseAddress="0x1d000000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -312,10 +269,10 @@
 		</Configuration>
 		<Configuration
 			Name="PGInstrument|Win32"
-			ConfigurationType="1"
-			InheritedPropertySheets=".\pyproject.VS2008.vsprops;.\release.VS2008.vsprops;.\pginstrument.VS2008.vsprops"
-			UseOfMFC="0"
-			ATLMinimizesCRunTimeLibraryUsage="false"
+			ConfigurationType="2"
+			InheritedPropertySheets=".\pyd.VS2008.vsprops;.\pginstrument.VS2008.vsprops"
+			CharacterSet="0"
+			WholeProgramOptimization="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -334,31 +291,19 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories=""
-				PreprocessorDefinitions="_WINDOWS"
-				StringPooling="true"
-				RuntimeLibrary="2"
-				EnableFunctionLevelLinking="true"
-				CompileAs="0"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG"
-				Culture="1033"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="$(OutDir)\pythonw.exe"
-				StackReserveSize="2000000"
-				BaseAddress="0x1d000000"
-				ImportLibrary=""
-				TargetMachine="1"
+				AdditionalDependencies=""
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -384,10 +329,10 @@
 		</Configuration>
 		<Configuration
 			Name="PGInstrument|x64"
-			ConfigurationType="1"
-			InheritedPropertySheets=".\pyproject.VS2008.vsprops;.\x64.VS2008.vsprops;.\release.VS2008.vsprops;.\pginstrument.VS2008.vsprops"
-			UseOfMFC="0"
-			ATLMinimizesCRunTimeLibraryUsage="false"
+			ConfigurationType="2"
+			InheritedPropertySheets=".\pyd.VS2008.vsprops;.\x64.VS2008.vsprops;.\pginstrument.VS2008.vsprops"
+			CharacterSet="0"
+			WholeProgramOptimization="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -407,30 +352,19 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories=""
-				PreprocessorDefinitions="_WINDOWS"
-				StringPooling="true"
-				RuntimeLibrary="2"
-				EnableFunctionLevelLinking="true"
-				CompileAs="0"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG"
-				Culture="1033"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="$(OutDir)\pythonw.exe"
-				StackReserveSize="2000000"
-				BaseAddress="0x1d000000"
-				ImportLibrary=""
+				AdditionalDependencies=""
 				TargetMachine="17"
 			/>
 			<Tool
@@ -457,10 +391,10 @@
 		</Configuration>
 		<Configuration
 			Name="PGUpdate|Win32"
-			ConfigurationType="1"
-			InheritedPropertySheets=".\pyproject.VS2008.vsprops;.\release.VS2008.vsprops;.\pgupdate.VS2008.vsprops"
-			UseOfMFC="0"
-			ATLMinimizesCRunTimeLibraryUsage="false"
+			ConfigurationType="2"
+			InheritedPropertySheets=".\pyd.VS2008.vsprops;.\pgupdate.VS2008.vsprops"
+			CharacterSet="0"
+			WholeProgramOptimization="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -479,31 +413,19 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories=""
-				PreprocessorDefinitions="_WINDOWS"
-				StringPooling="true"
-				RuntimeLibrary="2"
-				EnableFunctionLevelLinking="true"
-				CompileAs="0"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG"
-				Culture="1033"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="$(OutDir)\pythonw.exe"
-				StackReserveSize="2000000"
-				BaseAddress="0x1d000000"
-				ImportLibrary=""
-				TargetMachine="1"
+				AdditionalDependencies=""
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -529,10 +451,10 @@
 		</Configuration>
 		<Configuration
 			Name="PGUpdate|x64"
-			ConfigurationType="1"
-			InheritedPropertySheets=".\pyproject.VS2008.vsprops;.\x64.VS2008.vsprops;.\release.VS2008.vsprops;.\pgupdate.VS2008.vsprops"
-			UseOfMFC="0"
-			ATLMinimizesCRunTimeLibraryUsage="false"
+			ConfigurationType="2"
+			InheritedPropertySheets=".\pyd.VS2008.vsprops;.\x64.VS2008.vsprops;.\pgupdate.VS2008.vsprops"
+			CharacterSet="0"
+			WholeProgramOptimization="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -552,30 +474,19 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories=""
-				PreprocessorDefinitions="_WINDOWS"
-				StringPooling="true"
-				RuntimeLibrary="2"
-				EnableFunctionLevelLinking="true"
-				CompileAs="0"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG"
-				Culture="1033"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="$(OutDir)\pythonw.exe"
-				StackReserveSize="2000000"
-				BaseAddress="0x1d000000"
-				ImportLibrary=""
+				AdditionalDependencies=""
 				TargetMachine="17"
 			/>
 			<Tool
@@ -605,86 +516,18 @@
 	</References>
 	<Files>
 		<Filter
-			Name="Resource Files"
-			>
-			<File
-				RelativePath="..\PC\pycon.ico"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\PC\pythonw_exe.rc"
-				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					>
-					<Tool
-						Name="VCResourceCompilerTool"
-						AdditionalIncludeDirectories="&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)..\..\cpython\PC&quot;;&quot;$(ProjectDir)..\..\cpython\Include&quot;"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Debug|x64"
-					>
-					<Tool
-						Name="VCResourceCompilerTool"
-						AdditionalIncludeDirectories="&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)..\..\cpython\PC&quot;;&quot;$(ProjectDir)..\..\cpython\Include&quot;"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCResourceCompilerTool"
-						AdditionalIncludeDirectories="&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)..\..\cpython\PC&quot;;&quot;$(ProjectDir)..\..\cpython\Include&quot;"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|x64"
-					>
-					<Tool
-						Name="VCResourceCompilerTool"
-						AdditionalIncludeDirectories="&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)..\..\cpython\PC&quot;;&quot;$(ProjectDir)..\..\cpython\Include&quot;"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="PGInstrument|Win32"
-					>
-					<Tool
-						Name="VCResourceCompilerTool"
-						AdditionalIncludeDirectories="&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)..\..\cpython\PC&quot;;&quot;$(ProjectDir)..\..\cpython\Include&quot;"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="PGInstrument|x64"
-					>
-					<Tool
-						Name="VCResourceCompilerTool"
-						AdditionalIncludeDirectories="&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)..\..\cpython\PC&quot;;&quot;$(ProjectDir)..\..\cpython\Include&quot;"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="PGUpdate|Win32"
-					>
-					<Tool
-						Name="VCResourceCompilerTool"
-						AdditionalIncludeDirectories="&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)..\..\cpython\PC&quot;;&quot;$(ProjectDir)..\..\cpython\Include&quot;"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="PGUpdate|x64"
-					>
-					<Tool
-						Name="VCResourceCompilerTool"
-						AdditionalIncludeDirectories="&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)..\..\cpython\PC&quot;;&quot;$(ProjectDir)..\..\cpython\Include&quot;"
-					/>
-				</FileConfiguration>
-			</File>
-		</Filter>
-		<Filter
 			Name="Source Files"
 			>
 			<File
-				RelativePath="..\..\cpython\PC\WinMain.c"
+				RelativePath="..\PC\_testconsole.c"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			>
+			<File
+				RelativePath="..\..\cpython\PC\python_nt.rc"
 				>
 			</File>
 		</Filter>
