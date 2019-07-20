@@ -43,7 +43,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalIncludeDirectories="$(sqlite3Dir)"
-				PreprocessorDefinitions="MODULE_NAME=\&quot;sqlite3\&quot;"
+				PreprocessorDefinitions="MODULE_NAME=\&quot;sqlite3\&quot;;SQLITE_VERSION=3.28.0.0;SQLITE_MAJOR_VERSION=3;SQLITE_MINOR_VERSION=28;SQLITE_MICRO_VERSION=0;SQLITE_PATCH_VERSION=0"
 				ProgramDataBaseFileName="$(IntDir)\$(TargetName).pdb"
 			/>
 			<Tool
@@ -109,7 +109,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalIncludeDirectories="$(sqlite3Dir)"
-				PreprocessorDefinitions="MODULE_NAME=\&quot;sqlite3\&quot;"
+				PreprocessorDefinitions="MODULE_NAME=\&quot;sqlite3\&quot;;SQLITE_VERSION=3.28.0.0;SQLITE_MAJOR_VERSION=3;SQLITE_MINOR_VERSION=28;SQLITE_MICRO_VERSION=0;SQLITE_PATCH_VERSION=0"
 				ProgramDataBaseFileName="$(IntDir)\$(TargetName).pdb"
 			/>
 			<Tool
@@ -175,7 +175,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalIncludeDirectories="$(sqlite3Dir)"
-				PreprocessorDefinitions="MODULE_NAME=\&quot;sqlite3\&quot;"
+				PreprocessorDefinitions="MODULE_NAME=\&quot;sqlite3\&quot;;SQLITE_VERSION=3.28.0.0;SQLITE_MAJOR_VERSION=3;SQLITE_MINOR_VERSION=28;SQLITE_MICRO_VERSION=0;SQLITE_PATCH_VERSION=0"
 				ProgramDataBaseFileName="$(IntDir)\$(TargetName).pdb"
 			/>
 			<Tool
@@ -242,7 +242,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalIncludeDirectories="$(sqlite3Dir)"
-				PreprocessorDefinitions="MODULE_NAME=\&quot;sqlite3\&quot;"
+				PreprocessorDefinitions="MODULE_NAME=\&quot;sqlite3\&quot;;SQLITE_VERSION=3.28.0.0;SQLITE_MAJOR_VERSION=3;SQLITE_MINOR_VERSION=28;SQLITE_MICRO_VERSION=0;SQLITE_PATCH_VERSION=0"
 				ProgramDataBaseFileName="$(IntDir)\$(TargetName).pdb"
 			/>
 			<Tool
@@ -308,7 +308,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalIncludeDirectories="$(sqlite3Dir)"
-				PreprocessorDefinitions="MODULE_NAME=\&quot;sqlite3\&quot;"
+				PreprocessorDefinitions="MODULE_NAME=\&quot;sqlite3\&quot;;SQLITE_VERSION=3.28.0.0;SQLITE_MAJOR_VERSION=3;SQLITE_MINOR_VERSION=28;SQLITE_MICRO_VERSION=0;SQLITE_PATCH_VERSION=0"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -371,7 +371,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalIncludeDirectories="$(sqlite3Dir)"
-				PreprocessorDefinitions="MODULE_NAME=\&quot;sqlite3\&quot;"
+				PreprocessorDefinitions="MODULE_NAME=\&quot;sqlite3\&quot;;SQLITE_VERSION=3.28.0.0;SQLITE_MAJOR_VERSION=3;SQLITE_MINOR_VERSION=28;SQLITE_MICRO_VERSION=0;SQLITE_PATCH_VERSION=0"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -434,7 +434,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalIncludeDirectories="$(sqlite3Dir)"
-				PreprocessorDefinitions="MODULE_NAME=\&quot;sqlite3\&quot;"
+				PreprocessorDefinitions="MODULE_NAME=\&quot;sqlite3\&quot;;SQLITE_VERSION=3.28.0.0;SQLITE_MAJOR_VERSION=3;SQLITE_MINOR_VERSION=28;SQLITE_MICRO_VERSION=0;SQLITE_PATCH_VERSION=0"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -497,7 +497,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalIncludeDirectories="$(sqlite3Dir)"
-				PreprocessorDefinitions="MODULE_NAME=\&quot;sqlite3\&quot;"
+				PreprocessorDefinitions="MODULE_NAME=\&quot;sqlite3\&quot;;SQLITE_VERSION=3.28.0.0;SQLITE_MAJOR_VERSION=3;SQLITE_MINOR_VERSION=28;SQLITE_MICRO_VERSION=0;SQLITE_PATCH_VERSION=0"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
