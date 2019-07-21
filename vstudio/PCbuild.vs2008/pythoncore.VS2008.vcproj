@@ -1843,7 +1843,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Objects\rangeobject.c"
+				RelativePath="..\Objects\rangeobject.c"
 				>
 			</File>
 			<File
@@ -2171,7 +2171,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Python\pystate.c"
+				RelativePath="..\Python\pystate.c"
 				>
 			</File>
 			<File
