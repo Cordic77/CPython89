@@ -1219,7 +1219,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\_csv.c"
+				RelativePath="..\Modules\_csv.c"
 				>
 			</File>
 			<File
@@ -1502,7 +1502,7 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\cpython\Modules\_io\textio.c"
+					RelativePath="..\Modules\_io\textio.c"
 					>
 				</File>
 				<File
@@ -1867,7 +1867,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Objects\typeobject.c"
+				RelativePath="..\Objects\typeobject.c"
 				>
 			</File>
 			<File
@@ -2219,7 +2219,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Python\traceback.c"
+				RelativePath="..\Python\traceback.c"
 				>
 			</File>
 		</Filter>

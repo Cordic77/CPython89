@@ -1278,7 +1278,7 @@ static PyGetSetDef TaskStepMethWrapper_getsetlist[] = {
 };
 
 #if !defined(ISO_C99) || (ISO_C99 == 1)  /*C89 -- designated initializers aren't supported*/
-PyTypeObject TaskStepMethWrapper_Type = {
+static PyTypeObject TaskStepMethWrapper_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
     "TaskStepMethWrapper",
     .tp_basicsize = sizeof(TaskStepMethWrapper),
@@ -1292,7 +1292,7 @@ PyTypeObject TaskStepMethWrapper_Type = {
     .tp_clear = (inquiry)TaskStepMethWrapper_clear,
 };
 #else
-PyTypeObject TaskStepMethWrapper_Type = {
+static PyTypeObject TaskStepMethWrapper_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
     "TaskStepMethWrapper",
 };
@@ -1376,7 +1376,7 @@ TaskWakeupMethWrapper_dealloc(TaskWakeupMethWrapper *o)
 }
 
 #if !defined(ISO_C99) || (ISO_C99 == 1)  /*C89 -- designated initializers aren't supported*/
-PyTypeObject TaskWakeupMethWrapper_Type = {
+static PyTypeObject TaskWakeupMethWrapper_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
     "TaskWakeupMethWrapper",
     .tp_basicsize = sizeof(TaskWakeupMethWrapper),
@@ -1389,7 +1389,7 @@ PyTypeObject TaskWakeupMethWrapper_Type = {
     .tp_clear = (inquiry)TaskWakeupMethWrapper_clear,
 };
 #else
-PyTypeObject TaskWakeupMethWrapper_Type = {
+static PyTypeObject TaskWakeupMethWrapper_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
     "TaskWakeupMethWrapper",
 };
@@ -2256,14 +2256,19 @@ set_exception:
 
             if (task->task_must_cancel) {
                 PyObject *r;
-                r = future_cancel(fut);
+                int is_true;
+                r = _PyObject_CallMethodId(result, &PyId_cancel, NULL);
                 if (r == NULL) {
                     return NULL;
                 }
-                if (r == Py_True) {
+                is_true = PyObject_IsTrue(r);
+                Py_DECREF(r);
+                if (is_true < 0) {
+                    return NULL;
+                }
+                else if (is_true) {
                     task->task_must_cancel = 0;
                 }
-                Py_DECREF(r);
             }
 
             Py_RETURN_NONE;
