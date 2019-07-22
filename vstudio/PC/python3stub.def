@@ -221,7 +221,6 @@ PyExc_PendingDeprecationWarning
 PyExc_PermissionError
 PyExc_ProcessLookupError
 PyExc_RecursionError
-PyExc_RecursionErrorInst
 PyExc_ReferenceError
 PyExc_ResourceWarning
 PyExc_RuntimeError
