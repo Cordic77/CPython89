@@ -86,7 +86,10 @@ typedef int socklen_t;
 #endif
 
 #ifdef HAVE_LINUX_CAN_H
-#include <linux/can.h>
+# include <linux/can.h>
+#else
+# undef AF_CAN
+# undef PF_CAN
 #endif
 
 #ifdef HAVE_LINUX_CAN_RAW_H

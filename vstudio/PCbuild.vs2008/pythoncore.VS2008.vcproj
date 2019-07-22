@@ -1147,7 +1147,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Parser\tokenizer.h"
+				RelativePath="..\Parser\tokenizer.h"
 				>
 			</File>
 			<File
@@ -1999,7 +1999,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Parser\tokenizer.c"
+				RelativePath="..\Parser\tokenizer.c"
 				>
 			</File>
 		</Filter>

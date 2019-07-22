@@ -559,7 +559,7 @@
 			Name="Source Files"
 			>
 			<File
-				RelativePath="..\..\cpython\Programs\_testembed.c"
+				RelativePath="..\Programs\_testembed.c"
 				>
 			</File>
 		</Filter>
