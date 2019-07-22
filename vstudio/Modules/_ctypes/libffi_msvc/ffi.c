@@ -242,7 +242,7 @@ ffi_call(/*@dependent@*/ ffi_cif *cif,
       /* If a single argument takes more than 8 bytes,
          then a copy is passed by reference. */
     { unsigned i;
-      for (/*unsigned*/ i = 0; i < cif->nargs; i++) {
+      for (/*unsigned*/ i = 0; i < cif->nargs; i++) {  /*C89 -- mixed declarations and code*/
           size_t z = cif->arg_types[i]->size;
           if (z > 8) {
               void *temp = alloca(z);

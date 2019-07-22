@@ -647,11 +647,23 @@
 			Name="Include"
 			>
 			<File
+				RelativePath="..\..\cpython\Modules\_io\_iomodule.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\_math.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\cpython\Include\abstract.h"
 				>
 			</File>
 			<File
 				RelativePath="..\..\cpython\Include\accu.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\cjkcodecs\alg_jisx0201.h"
 				>
 			</File>
 			<File
@@ -671,11 +683,11 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Include\bytes_methods.h"
+				RelativePath="..\..\cpython\Include\bytearrayobject.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Include\bytearrayobject.h"
+				RelativePath="..\..\cpython\Include\bytes_methods.h"
 				>
 			</File>
 			<File
@@ -688,6 +700,14 @@
 			</File>
 			<File
 				RelativePath="..\..\cpython\Include\ceval.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Python\ceval_gil.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\cjkcodecs\cjkcodecs.h"
 				>
 			</File>
 			<File
@@ -711,7 +731,23 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\cpython\Python\condvar.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Objects\stringlib\count.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\zlib\crc32.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\cpython\Include\datetime.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\zlib\deflate.h"
 				>
 			</File>
 			<File
@@ -723,7 +759,15 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\cpython\Include\dtoa.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\cpython\Include\dynamic_annotations.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\cjkcodecs\emu_jisx0213_2000.h"
 				>
 			</File>
 			<File
@@ -735,7 +779,15 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\cpython\PC\errmap.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\cpython\Include\eval.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Objects\stringlib\fastsearch.h"
 				>
 			</File>
 			<File
@@ -744,6 +796,10 @@
 			</File>
 			<File
 				RelativePath="..\..\cpython\Include\fileutils.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Objects\stringlib\find.h"
 				>
 			</File>
 			<File
@@ -771,7 +827,31 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\cpython\Modules\hashtable.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\cpython\Include\import.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Python\importdl.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\zlib\inffast.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\zlib\inffixed.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\zlib\inflate.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\zlib\inftrees.h"
 				>
 			</File>
 			<File
@@ -792,6 +872,30 @@
 			</File>
 			<File
 				RelativePath="..\..\cpython\Include\longobject.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\cjkcodecs\mappings_cn.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\cjkcodecs\mappings_hk.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\cjkcodecs\mappings_jisx0213_pair.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\cjkcodecs\mappings_jp.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\cjkcodecs\mappings_kr.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\cjkcodecs\mappings_tw.h"
 				>
 			</File>
 			<File
@@ -816,6 +920,10 @@
 			</File>
 			<File
 				RelativePath="..\..\cpython\Include\moduleobject.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\cjkcodecs\multibytecodec.h"
 				>
 			</File>
 			<File
@@ -851,7 +959,15 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\cpython\Parser\parser.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\cpython\Include\parsetok.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Objects\stringlib\partition.h"
 				>
 			</File>
 			<File
@@ -867,10 +983,6 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Include\pyhash.h"
-				>
-			</File>
-			<File
 				RelativePath="..\..\cpython\Include\py_curses.h"
 				>
 			</File>
@@ -880,6 +992,10 @@
 			</File>
 			<File
 				RelativePath="..\..\cpython\Include\pycapsule.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\PC\pyconfig.h"
 				>
 			</File>
 			<File
@@ -907,19 +1023,19 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\cpython\Include\pyhash.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\cpython\Include\pylifecycle.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Include\pymath.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Include\pytime.h"
-				>
-			</File>
-			<File
 				RelativePath="..\..\cpython\Include\pymacro.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Include\pymath.h"
 				>
 			</File>
 			<File
@@ -939,15 +1055,11 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Include\pystrtod.h"
-				>
-			</File>
-			<File
 				RelativePath="..\..\cpython\Include\pystrhex.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Include\dtoa.h"
+				RelativePath="..\..\cpython\Include\pystrtod.h"
 				>
 			</File>
 			<File
@@ -967,6 +1079,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\cpython\Include\pytime.h"
+				>
+			</File>
+			<File
 				RelativePath="..\Include\pytime.h"
 				>
 			</File>
@@ -975,11 +1091,35 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\cpython\Objects\stringlib\replace.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\rotatingtree.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\cpython\Include\setobject.h"
 				>
 			</File>
 			<File
 				RelativePath="..\..\cpython\Include\sliceobject.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Objects\stringlib\split.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\sre.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\sre_constants.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\sre_lib.h"
 				>
 			</File>
 			<File
@@ -999,11 +1139,23 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\cpython\Python\thread_nt.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\cpython\Include\token.h"
 				>
 			</File>
 			<File
+				RelativePath="..\..\cpython\Parser\tokenizer.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\cpython\Include\traceback.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\zlib\trees.h"
 				>
 			</File>
 			<File
@@ -1019,63 +1171,15 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\cpython\Objects\unicodetype_db.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\cpython\Include\weakrefobject.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\_math.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\hashtable.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\rotatingtree.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\sre.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\sre_constants.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\sre_lib.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\_io\_iomodule.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\zlib\crc32.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\zlib\deflate.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\zlib\inffast.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\zlib\inffixed.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\zlib\inflate.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\zlib\inftrees.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\zlib\trees.h"
+				RelativePath="..\..\cpython\Python\wordcode_helpers.h"
 				>
 			</File>
 			<File
@@ -1094,128 +1198,16 @@
 				RelativePath="..\..\cpython\Modules\zlib\zutil.h"
 				>
 			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\cjkcodecs\alg_jisx0201.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\cjkcodecs\cjkcodecs.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\cjkcodecs\emu_jisx0213_2000.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\cjkcodecs\mappings_cn.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\cjkcodecs\mappings_hk.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\cjkcodecs\mappings_jisx0213_pair.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\cjkcodecs\mappings_jp.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\cjkcodecs\mappings_kr.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\cjkcodecs\mappings_tw.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\cjkcodecs\multibytecodec.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Objects\stringlib\count.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Objects\stringlib\fastsearch.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Objects\stringlib\find.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Objects\stringlib\partition.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Objects\stringlib\replace.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Objects\stringlib\split.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Objects\unicodetype_db.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Parser\parser.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Parser\tokenizer.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\PC\errmap.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\PC\pyconfig.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Python\ceval_gil.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Python\condvar.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Python\importdl.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Python\thread_nt.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Python\wordcode_helpers.h"
-				>
-			</File>
 		</Filter>
 		<Filter
 			Name="Modules"
 			>
 			<File
+				RelativePath="..\Modules\_asynciomodule.c"
+				>
+			</File>
+			<File
 				RelativePath="..\..\cpython\Modules\_bisectmodule.c"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\_blake2\blake2module.c"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\_blake2\blake2b_impl.c"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\_blake2\blake2s_impl.c"
 				>
 			</File>
 			<File
@@ -1228,6 +1220,10 @@
 			</File>
 			<File
 				RelativePath="..\..\cpython\Modules\_csv.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\_datetimemodule.c"
 				>
 			</File>
 			<File
@@ -1255,15 +1251,19 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\cpython\Modules\_opcode.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\_operator.c"
+				>
+			</File>
+			<File
 				RelativePath="..\Modules\_pickle.c"
 				>
 			</File>
 			<File
 				RelativePath="..\..\cpython\Modules\_randommodule.c"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\_sha3\sha3module.c"
 				>
 			</File>
 			<File
@@ -1276,6 +1276,14 @@
 			</File>
 			<File
 				RelativePath="..\..\cpython\Modules\_struct.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\_threadmodule.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\_tracemalloc.c"
 				>
 			</File>
 			<File
@@ -1299,11 +1307,19 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\cmathmodule.c"
+				RelativePath="..\..\cpython\Modules\_blake2\blake2b_impl.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\_datetimemodule.c"
+				RelativePath="..\..\cpython\Modules\_blake2\blake2module.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\_blake2\blake2s_impl.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\cmathmodule.c"
 				>
 			</File>
 			<File
@@ -1343,19 +1359,11 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\_opcode.c"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\_operator.c"
-				>
-			</File>
-			<File
 				RelativePath="..\..\cpython\Modules\parsermodule.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\posixmodule.c"
+				RelativePath="..\Modules\posixmodule.c"
 				>
 			</File>
 			<File
@@ -1371,6 +1379,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\cpython\Modules\_sha3\sha3module.c"
+				>
+			</File>
+			<File
 				RelativePath="..\..\cpython\Modules\sha512module.c"
 				>
 			</File>
@@ -1380,14 +1392,6 @@
 			</File>
 			<File
 				RelativePath="..\..\cpython\Modules\symtablemodule.c"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\_threadmodule.c"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\_tracemalloc.c"
 				>
 			</File>
 			<File
@@ -1410,7 +1414,75 @@
 				Name="_io"
 				>
 				<File
-					RelativePath="..\..\cpython\Modules\_io\fileio.c"
+					RelativePath="..\..\cpython\Modules\_io\_iomodule.c"
+					>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Debug|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PGInstrument|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PGInstrument|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PGUpdate|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PGUpdate|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\..\cpython\Modules\_io\bufferedio.c"
 					>
 				</File>
 				<File
@@ -1418,15 +1490,15 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\cpython\Modules\_io\stringio.c"
-					>
-				</File>
-				<File
-					RelativePath="..\..\cpython\Modules\_io\bufferedio.c"
+					RelativePath="..\..\cpython\Modules\_io\fileio.c"
 					>
 				</File>
 				<File
 					RelativePath="..\..\cpython\Modules\_io\iobase.c"
+					>
+				</File>
+				<File
+					RelativePath="..\..\cpython\Modules\_io\stringio.c"
 					>
 				</File>
 				<File
@@ -1498,74 +1570,6 @@
 						<Tool
 							Name="VCCLCompilerTool"
 							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\cpython\Modules\_io&quot;"
-						/>
-					</FileConfiguration>
-				</File>
-				<File
-					RelativePath="..\..\cpython\Modules\_io\_iomodule.c"
-					>
-					<FileConfiguration
-						Name="Release|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="PGInstrument|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="PGInstrument|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="PGUpdate|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="PGUpdate|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
 						/>
 					</FileConfiguration>
 				</File>
@@ -1646,11 +1650,11 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\cpython\Modules\cjkcodecs\multibytecodec.c"
+					RelativePath="..\..\cpython\Modules\_winapi.c"
 					>
 				</File>
 				<File
-					RelativePath="..\..\cpython\Modules\_winapi.c"
+					RelativePath="..\..\cpython\Modules\cjkcodecs\multibytecodec.c"
 					>
 				</File>
 			</Filter>
@@ -1671,11 +1675,11 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Objects\bytes_methods.c"
+				RelativePath="..\..\cpython\Objects\bytearrayobject.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Objects\bytearrayobject.c"
+				RelativePath="..\..\cpython\Objects\bytes_methods.c"
 				>
 			</File>
 			<File
@@ -1779,7 +1783,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Objects\exceptions.c"
+				RelativePath="..\Objects\exceptions.c"
 				>
 			</File>
 			<File
@@ -1787,7 +1791,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Objects\floatobject.c"
+				RelativePath="..\Objects\floatobject.c"
 				>
 			</File>
 			<File
@@ -1967,6 +1971,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\cpython\PC\invalid_parameter_handler.c"
+				>
+			</File>
+			<File
 				RelativePath="..\..\cpython\Parser\listnode.c"
 				>
 			</File>
@@ -1994,20 +2002,16 @@
 				RelativePath="..\..\cpython\Parser\tokenizer.c"
 				>
 			</File>
-			<File
-				RelativePath="..\..\cpython\PC\invalid_parameter_handler.c"
-				>
-			</File>
 		</Filter>
 		<Filter
 			Name="PC"
 			>
 			<File
-				RelativePath="..\..\cpython\PC\winreg.c"
+				RelativePath="..\..\cpython\PC\config.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\PC\config.c"
+				RelativePath="..\..\cpython\PC\dl_nt.c"
 				>
 			</File>
 			<File
@@ -2019,6 +2023,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\PC\_findvs.cpp"
+				>
+			</File>
+			<File
 				RelativePath="..\..\cpython\Python\pyhash.c"
 				>
 			</File>
@@ -2027,7 +2035,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\PC\dl_nt.c"
+				RelativePath="..\..\cpython\PC\winreg.c"
 				>
 			</File>
 		</Filter>
@@ -2060,6 +2068,10 @@
 			</File>
 			<File
 				RelativePath="..\..\cpython\Python\compile.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Python\dtoa.c"
 				>
 			</File>
 			<File
@@ -2167,10 +2179,6 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Python\pytime.c"
-				>
-			</File>
-			<File
 				RelativePath="..\Python\pystate.c"
 				>
 			</File>
@@ -2187,15 +2195,15 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Python\dtoa.c"
-				>
-			</File>
-			<File
 				RelativePath="..\..\cpython\Python\Python-ast.c"
 				>
 			</File>
 			<File
 				RelativePath="..\..\cpython\Python\pythonrun.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Python\pytime.c"
 				>
 			</File>
 			<File

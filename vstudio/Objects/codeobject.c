@@ -22,8 +22,7 @@ all_name_chars(PyObject *o)
     static const unsigned char *name_chars = (unsigned char *)NAME_CHARS;
     const unsigned char *s, *e;
 
-    if (!PyUnicode_Check(o) || PyUnicode_READY(o) == -1 ||
-        !PyUnicode_IS_ASCII(o))
+    if (!PyUnicode_IS_ASCII(o))
         return 0;
 
     if (ok_name_char[*name_chars] == 0) {
@@ -64,6 +63,10 @@ intern_string_constants(PyObject *tuple)
     for (i = PyTuple_GET_SIZE(tuple); --i >= 0; ) {
         PyObject *v = PyTuple_GET_ITEM(tuple, i);
         if (PyUnicode_CheckExact(v)) {
+            if (PyUnicode_READY(v) == -1) {
+                PyErr_Clear();
+                continue;
+            }
             if (all_name_chars(v)) {
                 PyObject *w = v;
                 PyUnicode_InternInPlace(&v);
@@ -893,8 +896,8 @@ _PyCode_SetExtra(PyObject *code, Py_ssize_t index, void *extra)
             return -1;
         }
 
-      { Py_ssize_t i;  /*C89 -- mixed declarations and code*/
-        for (/*Py_ssize_t*/ i = co_extra->ce_size;
+      { Py_ssize_t i;
+        for (/*Py_ssize_t*/ i = co_extra->ce_size;  /*C89 -- mixed declarations and code*/
              i < state->co_extra_user_count;
              i++) {
             ce_extras[i] = NULL;

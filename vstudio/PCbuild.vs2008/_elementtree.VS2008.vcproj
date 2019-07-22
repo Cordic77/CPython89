@@ -607,6 +607,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\cpython\Modules\expat\loadlibrary.c"
+				>
+			</File>
+			<File
 				RelativePath="..\..\cpython\Modules\expat\xmlparse.c"
 				>
 			</File>
@@ -615,7 +619,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\expat\xmltok.c"
+				RelativePath="..\Modules\expat\xmltok.c"
 				>
 			</File>
 		</Filter>
