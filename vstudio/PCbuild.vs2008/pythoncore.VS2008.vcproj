@@ -1239,7 +1239,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\_localemodule.c"
+				RelativePath="..\Modules\_localemodule.c"
 				>
 			</File>
 			<File
@@ -2023,10 +2023,6 @@
 				>
 			</File>
 			<File
-				RelativePath="..\PC\_findvs.cpp"
-				>
-			</File>
-			<File
 				RelativePath="..\..\cpython\Python\pyhash.c"
 				>
 			</File>
@@ -2087,7 +2083,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Python\fileutils.c"
+				RelativePath="..\Python\fileutils.c"
 				>
 			</File>
 			<File

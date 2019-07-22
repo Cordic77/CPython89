@@ -67,7 +67,7 @@
 	/>
 	<UserMacro
 		Name="zlibDir"
-		Value="$(externalsDir)\_github\zlib"
+		Value="$(externalsDir)\github\zlib"
 	/>
 	<UserMacro
 		Name="opensslDir"
