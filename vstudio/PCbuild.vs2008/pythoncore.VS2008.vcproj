@@ -1395,7 +1395,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\timemodule.c"
+				RelativePath="..\Modules\timemodule.c"
 				>
 			</File>
 			<File
@@ -1835,15 +1835,15 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Objects\object.c"
+				RelativePath="..\Objects\object.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Objects\obmalloc.c"
+				RelativePath="..\Objects\obmalloc.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Objects\odictobject.c"
+				RelativePath="..\Objects\odictobject.c"
 				>
 			</File>
 			<File
@@ -1851,7 +1851,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Objects\setobject.c"
+				RelativePath="..\Objects\setobject.c"
 				>
 			</File>
 			<File
@@ -2031,7 +2031,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\PC\winreg.c"
+				RelativePath="..\PC\winreg.c"
 				>
 			</File>
 		</Filter>
@@ -2167,7 +2167,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Python\pylifecycle.c"
+				RelativePath="..\Python\pylifecycle.c"
 				>
 			</File>
 			<File
