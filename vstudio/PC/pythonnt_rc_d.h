@@ -1,5 +1,5 @@
 /* This file created by make_versioninfo.exe */
-#define FIELD3 8150
+#define FIELD3 9150
 #define MS_DLL_ID "3.6"
 #ifndef _DEBUG
 #define PYTHON_DLL_NAME "python36.dll"
