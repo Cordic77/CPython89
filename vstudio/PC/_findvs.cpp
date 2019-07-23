@@ -27,6 +27,11 @@
 
 #include "external\include\Setup.Configuration.h"
 
+#pragma comment(lib, "ole32.lib")
+#pragma comment(lib, "oleaut32.lib")
+#pragma comment(lib, "version.lib")
+#pragma comment(lib, "Microsoft.VisualStudio.Setup.Configuration.Native.lib")
+
 #include <Python.h>
 
 static PyObject *error_from_hr(HRESULT hr)

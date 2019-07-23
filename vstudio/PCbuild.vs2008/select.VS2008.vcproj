@@ -58,7 +58,6 @@
 				AdditionalLibraryDirectories="&quot;$(c99compatDir)\lib\dll-ansi-x86-debug&quot;"
 				IgnoreAllDefaultLibraries="true"
 				IgnoreDefaultLibraryNames="libc"
-				BaseAddress="0x1D110000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -122,7 +121,6 @@
 				AdditionalLibraryDirectories="&quot;$(c99compatDir)\lib\dll-ansi-x64-debug&quot;"
 				IgnoreAllDefaultLibraries="true"
 				IgnoreDefaultLibraryNames="libc"
-				BaseAddress="0x1D110000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -186,7 +184,6 @@
 				AdditionalLibraryDirectories="&quot;$(c99compatDir)\lib\dll-ansi-x86-release&quot;"
 				IgnoreAllDefaultLibraries="true"
 				IgnoreDefaultLibraryNames="libc"
-				BaseAddress="0x1D110000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -251,7 +248,6 @@
 				AdditionalLibraryDirectories="&quot;$(c99compatDir)\lib\dll-ansi-x64-release&quot;"
 				IgnoreAllDefaultLibraries="true"
 				IgnoreDefaultLibraryNames="libc"
-				BaseAddress="0x1D110000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -313,7 +309,6 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="ws2_32.lib"
 				IgnoreDefaultLibraryNames="libc"
-				BaseAddress="0x1D110000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -376,7 +371,6 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="ws2_32.lib"
 				IgnoreDefaultLibraryNames="libc"
-				BaseAddress="0x1D110000"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -439,7 +433,6 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="ws2_32.lib"
 				IgnoreDefaultLibraryNames="libc"
-				BaseAddress="0x1D110000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -502,7 +495,6 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="ws2_32.lib"
 				IgnoreDefaultLibraryNames="libc"
-				BaseAddress="0x1D110000"
 				TargetMachine="17"
 			/>
 			<Tool

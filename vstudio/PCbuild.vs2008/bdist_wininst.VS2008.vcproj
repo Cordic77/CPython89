@@ -52,7 +52,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="1"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\cpython\PC\bdist_wininst;..\..\cpython\Include;..\..\cpython\Modules\zlib"
+				AdditionalIncludeDirectories="..\..\cpython\PC\bdist_wininst;..\..\cpython\Include;&quot;$(zlibDir)&quot;"
 				PreprocessorDefinitions="_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE"
 				StringPooling="true"
 				RuntimeLibrary="0"
@@ -142,7 +142,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="1"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\cpython\PC\bdist_wininst;..\..\cpython\Include;..\..\cpython\Modules\zlib"
+				AdditionalIncludeDirectories="..\..\cpython\PC\bdist_wininst;..\..\cpython\Include;&quot;$(zlibDir)&quot;"
 				PreprocessorDefinitions="_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE"
 				StringPooling="true"
 				RuntimeLibrary="0"
@@ -218,27 +218,27 @@
 				Name="zlib"
 				>
 				<File
-					RelativePath="..\..\cpython\Modules\zlib\adler32.c"
+					RelativePath="$(zlibDir)\adler32.c"
 					>
 				</File>
 				<File
-					RelativePath="..\..\cpython\Modules\zlib\crc32.c"
+					RelativePath="$(zlibDir)\crc32.c"
 					>
 				</File>
 				<File
-					RelativePath="..\..\cpython\Modules\zlib\inffast.c"
+					RelativePath="$(zlibDir)\inffast.c"
 					>
 				</File>
 				<File
-					RelativePath="..\..\cpython\Modules\zlib\inflate.c"
+					RelativePath="$(zlibDir)\inflate.c"
 					>
 				</File>
 				<File
-					RelativePath="..\..\cpython\Modules\zlib\inftrees.c"
+					RelativePath="$(zlibDir)\inftrees.c"
 					>
 				</File>
 				<File
-					RelativePath="..\..\cpython\Modules\zlib\zutil.c"
+					RelativePath="$(zlibDir)\zutil.c"
 					>
 				</File>
 			</Filter>

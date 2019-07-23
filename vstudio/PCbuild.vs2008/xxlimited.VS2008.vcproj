@@ -43,7 +43,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="NDEBUG;_WIN32;_WINDLL;Py_LIMITED_API=0x03060000;$(NOINHERIT)"
+				PreprocessorDefinitions="NDEBUG;_WIN32;_WINDLL;Py_LIMITED_API=0x03060000;Py_PYSTATE_H;$(NOINHERIT)"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -60,7 +60,6 @@
 				AdditionalLibraryDirectories="&quot;$(c99compatDir)\lib\dll-ansi-x86-release&quot;"
 				IgnoreAllDefaultLibraries="true"
 				IgnoreDefaultLibraryNames="libc"
-				BaseAddress="0x1D110000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -109,7 +108,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="NDEBUG;_WIN32;_WIN64;_WINDLL;Py_LIMITED_API=0x03060000;$(NOINHERIT)"
+				PreprocessorDefinitions="NDEBUG;_WIN32;_WIN64;_WINDLL;Py_LIMITED_API=0x03060000;Py_PYSTATE_H;$(NOINHERIT)"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -126,7 +125,6 @@
 				AdditionalLibraryDirectories="&quot;$(c99compatDir)\lib\dll-ansi-x64-release&quot;"
 				IgnoreAllDefaultLibraries="true"
 				IgnoreDefaultLibraryNames="libc"
-				BaseAddress="0x1D110000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -174,7 +172,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="Py_LIMITED_API=0x03060000"
+				PreprocessorDefinitions="Py_LIMITED_API=0x03060000;Py_PYSTATE_H"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -189,7 +187,6 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="ws2_32.lib"
 				IgnoreDefaultLibraryNames="libc"
-				BaseAddress="0x1D110000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -238,7 +235,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="Py_LIMITED_API=0x03060000"
+				PreprocessorDefinitions="Py_LIMITED_API=0x03060000;Py_PYSTATE_H"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -253,7 +250,6 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="ws2_32.lib"
 				IgnoreDefaultLibraryNames="libc"
-				BaseAddress="0x1D110000"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -302,7 +298,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="Py_LIMITED_API=0x03060000"
+				PreprocessorDefinitions="NDEBUG;_WIN32;_WINDLL;Py_LIMITED_API=0x03060000;Py_PYSTATE_H;$(NOINHERIT)"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -317,7 +313,6 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="ws2_32.lib"
 				IgnoreDefaultLibraryNames="libc"
-				BaseAddress="0x1D110000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -366,7 +361,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="Py_LIMITED_API=0x03060000"
+				PreprocessorDefinitions="NDEBUG;_WIN32;_WIN64;_WINDLL;Py_LIMITED_API=0x03060000;Py_PYSTATE_H;$(NOINHERIT)"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -381,7 +376,6 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="ws2_32.lib"
 				IgnoreDefaultLibraryNames="libc"
-				BaseAddress="0x1D110000"
 				TargetMachine="17"
 			/>
 			<Tool

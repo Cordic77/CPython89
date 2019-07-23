@@ -67,7 +67,6 @@
 				IgnoreAllDefaultLibraries="true"
 				SubSystem="1"
 				StackReserveSize="2000000"
-				BaseAddress="0x1d000000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -143,7 +142,6 @@
 				IgnoreAllDefaultLibraries="true"
 				SubSystem="1"
 				StackReserveSize="2000000"
-				BaseAddress="0x1d000000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -220,7 +218,6 @@
 				IgnoreAllDefaultLibraries="true"
 				SubSystem="1"
 				StackReserveSize="2000000"
-				BaseAddress="0x1d000000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -298,7 +295,6 @@
 				IgnoreAllDefaultLibraries="true"
 				SubSystem="1"
 				StackReserveSize="2100000"
-				BaseAddress="0x1d000000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -371,7 +367,6 @@
 				OutputFile="$(OutDir)\python.exe"
 				SubSystem="1"
 				StackReserveSize="2000000"
-				BaseAddress="0x1d000000"
 				ImportLibrary=""
 			/>
 			<Tool
@@ -446,7 +441,6 @@
 				OutputFile="$(OutDir)\python.exe"
 				SubSystem="1"
 				StackReserveSize="2000000"
-				BaseAddress="0x1d000000"
 				ImportLibrary=""
 				TargetMachine="17"
 			/>
@@ -521,7 +515,6 @@
 				OutputFile="$(OutDir)\python.exe"
 				SubSystem="1"
 				StackReserveSize="2000000"
-				BaseAddress="0x1d000000"
 				ImportLibrary=""
 			/>
 			<Tool
@@ -596,7 +589,6 @@
 				OutputFile="$(OutDir)\python.exe"
 				SubSystem="1"
 				StackReserveSize="2000000"
-				BaseAddress="0x1d000000"
 				ImportLibrary=""
 				TargetMachine="17"
 			/>

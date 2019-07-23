@@ -42,6 +42,8 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat&quot;"
+				ForcedIncludeFiles="compat.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -57,7 +59,6 @@
 				AdditionalDependencies="msvcrtd.lib oldnames.lib c99compatd_vs2008.lib"
 				AdditionalLibraryDirectories="&quot;$(c99compatDir)\lib\dll-ansi-x86-debug&quot;"
 				IgnoreAllDefaultLibraries="true"
-				BaseAddress="0x1e1F0000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -105,6 +106,8 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat&quot;"
+				ForcedIncludeFiles="compat.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -120,7 +123,6 @@
 				AdditionalDependencies="msvcrtd.lib oldnames.lib c99compatd_vs2008.lib"
 				AdditionalLibraryDirectories="&quot;$(c99compatDir)\lib\dll-ansi-x64-debug&quot;"
 				IgnoreAllDefaultLibraries="true"
-				BaseAddress="0x1e1F0000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -168,6 +170,8 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat&quot;"
+				ForcedIncludeFiles="compat.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -183,7 +187,6 @@
 				AdditionalDependencies="msvcrt.lib oldnames.lib c99compat_vs2008.lib"
 				AdditionalLibraryDirectories="&quot;$(c99compatDir)\lib\dll-ansi-x86-release&quot;"
 				IgnoreAllDefaultLibraries="true"
-				BaseAddress="0x1e1F0000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -232,6 +235,8 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat&quot;"
+				ForcedIncludeFiles="compat.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -247,7 +252,6 @@
 				AdditionalDependencies="msvcrt.lib oldnames.lib c99compat_vs2008.lib"
 				AdditionalLibraryDirectories="&quot;$(c99compatDir)\lib\dll-ansi-x64-release&quot;"
 				IgnoreAllDefaultLibraries="true"
-				BaseAddress="0x1e1F0000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -295,6 +299,8 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat&quot;"
+				ForcedIncludeFiles="compat.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -307,7 +313,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				BaseAddress="0x1e1F0000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -356,6 +361,8 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat&quot;"
+				ForcedIncludeFiles="compat.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -368,7 +375,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				BaseAddress="0x1e1F0000"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -417,6 +423,8 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat&quot;"
+				ForcedIncludeFiles="compat.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -429,7 +437,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				BaseAddress="0x1e1F0000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -478,6 +485,8 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat&quot;"
+				ForcedIncludeFiles="compat.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -490,7 +499,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				BaseAddress="0x1e1F0000"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -523,7 +531,7 @@
 			Name="Source Files"
 			>
 			<File
-				RelativePath="..\..\cpython\Modules\_testcapimodule.c"
+				RelativePath="..\Modules\_testcapimodule.c"
 				>
 			</File>
 		</Filter>

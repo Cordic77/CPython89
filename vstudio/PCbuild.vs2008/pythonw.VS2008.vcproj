@@ -66,7 +66,6 @@
 				OutputFile="$(OutDir)\pythonw_d.exe"
 				IgnoreAllDefaultLibraries="true"
 				StackReserveSize="2000000"
-				BaseAddress="0x1d000000"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -140,7 +139,6 @@
 				OutputFile="$(OutDir)\pythonw_d.exe"
 				IgnoreAllDefaultLibraries="true"
 				StackReserveSize="2000000"
-				BaseAddress="0x1d000000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -212,7 +210,6 @@
 				OutputFile="$(OutDir)\pythonw.exe"
 				IgnoreAllDefaultLibraries="true"
 				StackReserveSize="2000000"
-				BaseAddress="0x1d000000"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -286,7 +283,6 @@
 				OutputFile="$(OutDir)\pythonw.exe"
 				IgnoreAllDefaultLibraries="true"
 				StackReserveSize="2000000"
-				BaseAddress="0x1d000000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -356,7 +352,6 @@
 				Name="VCLinkerTool"
 				OutputFile="$(OutDir)\pythonw.exe"
 				StackReserveSize="2000000"
-				BaseAddress="0x1d000000"
 				ImportLibrary=""
 				TargetMachine="1"
 			/>
@@ -429,7 +424,6 @@
 				Name="VCLinkerTool"
 				OutputFile="$(OutDir)\pythonw.exe"
 				StackReserveSize="2000000"
-				BaseAddress="0x1d000000"
 				ImportLibrary=""
 				TargetMachine="17"
 			/>
@@ -501,7 +495,6 @@
 				Name="VCLinkerTool"
 				OutputFile="$(OutDir)\pythonw.exe"
 				StackReserveSize="2000000"
-				BaseAddress="0x1d000000"
 				ImportLibrary=""
 				TargetMachine="1"
 			/>
@@ -574,7 +567,6 @@
 				Name="VCLinkerTool"
 				OutputFile="$(OutDir)\pythonw.exe"
 				StackReserveSize="2000000"
-				BaseAddress="0x1d000000"
 				ImportLibrary=""
 				TargetMachine="17"
 			/>
