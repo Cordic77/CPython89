@@ -59,7 +59,6 @@
 				AdditionalDependencies="msvcrtd.lib oldnames.lib c99compatd_vs2008.lib"
 				AdditionalLibraryDirectories="&quot;$(c99compatDir)\lib\dll-ansi-x86-debug&quot;"
 				IgnoreAllDefaultLibraries="true"
-				BaseAddress="0x1D1A0000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -124,7 +123,6 @@
 				AdditionalDependencies="msvcrtd.lib oldnames.lib c99compatd_vs2008.lib"
 				AdditionalLibraryDirectories="&quot;$(c99compatDir)\lib\dll-ansi-x64-debug&quot;"
 				IgnoreAllDefaultLibraries="true"
-				BaseAddress="0x1D1A0000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -190,7 +188,6 @@
 				AdditionalLibraryDirectories="&quot;$(c99compatDir)\lib\dll-ansi-x86-release&quot;"
 				IgnoreAllDefaultLibraries="true"
 				SubSystem="0"
-				BaseAddress="0x1D1A0000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -257,7 +254,6 @@
 				AdditionalLibraryDirectories="&quot;$(c99compatDir)\lib\dll-ansi-x64-release&quot;"
 				IgnoreAllDefaultLibraries="true"
 				SubSystem="0"
-				BaseAddress="0x1D1A0000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -320,7 +316,6 @@
 			<Tool
 				Name="VCLinkerTool"
 				SubSystem="0"
-				BaseAddress="0x1D1A0000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -384,7 +379,6 @@
 			<Tool
 				Name="VCLinkerTool"
 				SubSystem="0"
-				BaseAddress="0x1D1A0000"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -448,7 +442,6 @@
 			<Tool
 				Name="VCLinkerTool"
 				SubSystem="0"
-				BaseAddress="0x1D1A0000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -512,7 +505,6 @@
 			<Tool
 				Name="VCLinkerTool"
 				SubSystem="0"
-				BaseAddress="0x1D1A0000"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -617,7 +609,7 @@
 			Name="Source Files"
 			>
 			<File
-				RelativePath="..\..\cpython\Modules\_decimal\_decimal.c"
+				RelativePath="..\Modules\_decimal\_decimal.c"
 				>
 			</File>
 			<File

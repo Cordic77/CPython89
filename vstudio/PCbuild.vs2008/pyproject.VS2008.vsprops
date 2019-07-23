@@ -11,8 +11,8 @@
 		Optimization="2"
 		InlineFunctionExpansion="1"
 		EnableIntrinsicFunctions="true"
-		AdditionalIncludeDirectories="&quot;$(c99compatDir)\include&quot;;&quot;$(ProjectDir)..\Compat&quot;;&quot;$(ProjectDir)..\Include&quot;;&quot;$(ProjectDir)..\Modules&quot;;&quot;$(ProjectDir)..\..\cpython\Include&quot;;&quot;$(ProjectDir)..\..\cpython\Modules&quot;;&quot;$(ProjectDir)..\..\cpython\PC&quot;"
-		PreprocessorDefinitions="_WIN32;Py_PYTHON_H;Py_PYTIME_H;Py_OBJECT_H"
+		AdditionalIncludeDirectories="&quot;$(c99compatDir)\include&quot;;&quot;$(ProjectDir)..\Compat&quot;;&quot;$(ProjectDir)..\Include&quot;;&quot;$(ProjectDir)..\Include\internal&quot;;&quot;$(ProjectDir)..\Modules&quot;;&quot;$(ProjectDir)..\..\cpython\Include&quot;;&quot;$(ProjectDir)..\..\cpython\Modules&quot;;&quot;$(ProjectDir)..\..\cpython\PC&quot;"
+		PreprocessorDefinitions="_WIN32;Py_PYTHON_H;Py_PYTIME_H;Py_OBJECT_H;Py_PYSTATE_H"
 		ProgramDataBaseFileName="$(IntDir)\$(TargetName).pdb"
 		StringPooling="true"
 		ExceptionHandling="0"
@@ -39,7 +39,7 @@
 	/>
 	<UserMacro
 		Name="PyDllName"
-		Value="python36"
+		Value="python37"
 	/>
 	<UserMacro
 		Name="PythonExe"
@@ -67,11 +67,11 @@
 	/>
 	<UserMacro
 		Name="zlibDir"
-		Value="$(externalsDir)\_github\zlib"
+		Value="$(externalsDir)\github\zlib"
 	/>
 	<UserMacro
 		Name="opensslDir"
-		Value="$(externalsDir)\cpython89-deps\openssl-1.0.2s"
+		Value="$(externalsDir)\cpython89-deps\openssl-1.1.1c"
 	/>
 	<UserMacro
 		Name="tcltkDir"

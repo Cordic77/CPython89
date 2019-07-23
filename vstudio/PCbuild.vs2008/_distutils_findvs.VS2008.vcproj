@@ -56,7 +56,6 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="msvcrtd.lib"
 				IgnoreAllDefaultLibraries="true"
-				BaseAddress="0x1D120000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -118,7 +117,6 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="msvcrtd.lib"
 				IgnoreAllDefaultLibraries="true"
-				BaseAddress="0x1D120000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -180,7 +178,6 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="msvcrt.lib"
 				IgnoreAllDefaultLibraries="true"
-				BaseAddress="0x1D120000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -243,7 +240,6 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="msvcrt.lib"
 				IgnoreAllDefaultLibraries="true"
-				BaseAddress="0x1D120000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -303,7 +299,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				BaseAddress="0x1D120000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -364,7 +359,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				BaseAddress="0x1D120000"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -425,7 +419,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				BaseAddress="0x1D120000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -486,7 +479,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				BaseAddress="0x1D120000"
 				TargetMachine="17"
 			/>
 			<Tool

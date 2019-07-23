@@ -43,8 +43,8 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/Zm200 "
-				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\cpython\Python&quot;;&quot;$(ProjectDir)..\..\cpython\Modules\zlib&quot;"
-				PreprocessorDefinitions="_USRDLL;Py_BUILD_CORE;Py_ENABLE_SHARED;WIN32;VS9_FIX_HACKY_CODE;Py_PYTHON_H;Py_PYTIME_H;Py_OBJECT_H"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\MSVCRT&quot;;&quot;$(ProjectDir)..\..\cpython\Python&quot;;&quot;$(zlibDir)&quot;"
+				PreprocessorDefinitions="_USRDLL;Py_BUILD_CORE;Py_ENABLE_SHARED;WIN32;_Py_HAVE_ZLIB;VS9_FIX_HACKY_CODE"
 				RuntimeLibrary="2"
 				ForcedIncludeFiles="compat.h;&quot;$(ProjectDir)..\Include\Python.h&quot;"
 			/>
@@ -70,7 +70,6 @@
 				IgnoreAllDefaultLibraries="true"
 				IgnoreDefaultLibraryNames="libc"
 				ProgramDatabaseFile="$(OutDir)$(PyDllName).pdb"
-				BaseAddress="0x1e000000"
 				ImportLibrary="$(OutDir)$(PyDllName).lib"
 			/>
 			<Tool
@@ -121,8 +120,8 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/Zm200 "
-				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\cpython\Python&quot;;&quot;$(ProjectDir)..\..\cpython\Modules\zlib&quot;"
-				PreprocessorDefinitions="_USRDLL;Py_BUILD_CORE;Py_ENABLE_SHARED;WIN32;VS9_FIX_HACKY_CODE;Py_PYTHON_H;Py_PYTIME_H;Py_OBJECT_H"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\MSVCRT&quot;;&quot;$(ProjectDir)..\..\cpython\Python&quot;;&quot;$(zlibDir)&quot;"
+				PreprocessorDefinitions="_USRDLL;Py_BUILD_CORE;Py_ENABLE_SHARED;WIN32;_Py_HAVE_ZLIB;VS9_FIX_HACKY_CODE"
 				RuntimeLibrary="2"
 				ForcedIncludeFiles="compat.h;&quot;$(ProjectDir)..\Include\Python.h&quot;"
 			/>
@@ -148,7 +147,6 @@
 				IgnoreAllDefaultLibraries="true"
 				IgnoreDefaultLibraryNames="libc"
 				ProgramDatabaseFile="$(OutDir)$(PyDllName).pdb"
-				BaseAddress="0x1e000000"
 				ImportLibrary="$(OutDir)$(PyDllName).lib"
 			/>
 			<Tool
@@ -202,8 +200,8 @@
 				Optimization="0"
 				InlineFunctionExpansion="0"
 				EnableIntrinsicFunctions="false"
-				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\cpython\Python&quot;;&quot;$(ProjectDir)..\..\cpython\Modules\zlib&quot;"
-				PreprocessorDefinitions="_USRDLL;Py_BUILD_CORE;Py_ENABLE_SHARED;WIN32;VS9_FIX_HACKY_CODE;Py_PYTHON_H;Py_PYTIME_H;Py_OBJECT_H"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\MSVCRT&quot;;&quot;$(ProjectDir)..\..\cpython\Python&quot;;&quot;$(zlibDir)&quot;"
+				PreprocessorDefinitions="_USRDLL;Py_BUILD_CORE;Py_ENABLE_SHARED;WIN32;_Py_HAVE_ZLIB;VS9_FIX_HACKY_CODE"
 				RuntimeLibrary="3"
 				ForcedIncludeFiles="compat.h;&quot;$(ProjectDir)..\Include\Python.h&quot;"
 			/>
@@ -229,7 +227,6 @@
 				IgnoreAllDefaultLibraries="true"
 				IgnoreDefaultLibraryNames="libc"
 				ProgramDatabaseFile="$(OutDir)$(PyDllName)_d.pdb"
-				BaseAddress="0x1e000000"
 				ImportLibrary="$(OutDir)$(PyDllName)_d.lib"
 			/>
 			<Tool
@@ -283,8 +280,8 @@
 				Optimization="0"
 				InlineFunctionExpansion="0"
 				EnableIntrinsicFunctions="false"
-				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\cpython\Python&quot;;&quot;$(ProjectDir)..\..\cpython\Modules\zlib&quot;"
-				PreprocessorDefinitions="_USRDLL;Py_BUILD_CORE;Py_ENABLE_SHARED;WIN32;VS9_FIX_HACKY_CODE;Py_PYTHON_H;Py_PYTIME_H;Py_OBJECT_H"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\MSVCRT&quot;;&quot;$(ProjectDir)..\..\cpython\Python&quot;;&quot;$(zlibDir)&quot;"
+				PreprocessorDefinitions="_USRDLL;Py_BUILD_CORE;Py_ENABLE_SHARED;WIN32;_Py_HAVE_ZLIB;VS9_FIX_HACKY_CODE"
 				RuntimeLibrary="3"
 				ForcedIncludeFiles="compat.h;&quot;$(ProjectDir)..\Include\Python.h&quot;"
 			/>
@@ -310,7 +307,6 @@
 				IgnoreAllDefaultLibraries="true"
 				IgnoreDefaultLibraryNames="libc"
 				ProgramDatabaseFile="$(OutDir)$(PyDllName)_d.pdb"
-				BaseAddress="0x1e000000"
 				ImportLibrary="$(OutDir)$(PyDllName)_d.lib"
 			/>
 			<Tool
@@ -360,8 +356,8 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/Zm200 "
-				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\cpython\Python&quot;;&quot;$(ProjectDir)..\..\cpython\Modules\zlib&quot;"
-				PreprocessorDefinitions="_USRDLL;Py_BUILD_CORE;Py_ENABLE_SHARED;WIN32;VS9_FIX_HACKY_CODE;Py_PYTHON_H;Py_PYTIME_H;Py_OBJECT_H"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\MSVCRT&quot;;&quot;$(ProjectDir)..\..\cpython\Python&quot;;&quot;$(zlibDir)&quot;"
+				PreprocessorDefinitions="_USRDLL;Py_BUILD_CORE;Py_ENABLE_SHARED;WIN32;_Py_HAVE_ZLIB;VS9_FIX_HACKY_CODE"
 				RuntimeLibrary="2"
 				ForcedIncludeFiles="compat.h;&quot;$(ProjectDir)..\Include\Python.h&quot;"
 			/>
@@ -385,7 +381,6 @@
 				OutputFile="$(OutDir)\$(PyDllName).dll"
 				IgnoreDefaultLibraryNames="libc"
 				ProgramDatabaseFile="$(OutDir)$(PyDllName).pdb"
-				BaseAddress="0x1e000000"
 				ImportLibrary="$(OutDirPGI)$(PyDllName).lib"
 			/>
 			<Tool
@@ -436,8 +431,8 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/Zm200 "
-				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\cpython\Python&quot;;&quot;$(ProjectDir)..\..\cpython\Modules\zlib&quot;"
-				PreprocessorDefinitions="_USRDLL;Py_BUILD_CORE;Py_ENABLE_SHARED;WIN32;VS9_FIX_HACKY_CODE;Py_PYTHON_H;Py_PYTIME_H;Py_OBJECT_H"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\MSVCRT&quot;;&quot;$(ProjectDir)..\..\cpython\Python&quot;;&quot;$(zlibDir)&quot;"
+				PreprocessorDefinitions="_USRDLL;Py_BUILD_CORE;Py_ENABLE_SHARED;WIN32;_Py_HAVE_ZLIB;VS9_FIX_HACKY_CODE"
 				RuntimeLibrary="2"
 				ForcedIncludeFiles="compat.h;&quot;$(ProjectDir)..\Include\Python.h&quot;"
 			/>
@@ -461,7 +456,6 @@
 				OutputFile="$(OutDir)\$(PyDllName).dll"
 				IgnoreDefaultLibraryNames="libc"
 				ProgramDatabaseFile="$(OutDir)$(PyDllName).pdb"
-				BaseAddress="0x1e000000"
 				ImportLibrary="$(OutDirPGI)$(PyDllName).lib"
 				TargetMachine="17"
 			/>
@@ -512,8 +506,8 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/Zm200 "
-				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\cpython\Python&quot;;&quot;$(ProjectDir)..\..\cpython\Modules\zlib&quot;"
-				PreprocessorDefinitions="_USRDLL;Py_BUILD_CORE;Py_ENABLE_SHARED;WIN32;VS9_FIX_HACKY_CODE;Py_PYTHON_H;Py_PYTIME_H;Py_OBJECT_H"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\MSVCRT&quot;;&quot;$(ProjectDir)..\..\cpython\Python&quot;;&quot;$(zlibDir)&quot;"
+				PreprocessorDefinitions="_USRDLL;Py_BUILD_CORE;Py_ENABLE_SHARED;WIN32;_Py_HAVE_ZLIB;VS9_FIX_HACKY_CODE"
 				RuntimeLibrary="2"
 				ForcedIncludeFiles="compat.h;&quot;$(ProjectDir)..\Include\Python.h&quot;"
 			/>
@@ -537,7 +531,6 @@
 				OutputFile="$(OutDir)\$(PyDllName).dll"
 				IgnoreDefaultLibraryNames="libc"
 				ProgramDatabaseFile="$(OutDir)$(PyDllName).pdb"
-				BaseAddress="0x1e000000"
 				ImportLibrary="$(OutDirPGI)$(PyDllName).lib"
 			/>
 			<Tool
@@ -588,8 +581,8 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/Zm200 "
-				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\cpython\Python&quot;;&quot;$(ProjectDir)..\..\cpython\Modules\zlib&quot;"
-				PreprocessorDefinitions="_USRDLL;Py_BUILD_CORE;Py_ENABLE_SHARED;WIN32;VS9_FIX_HACKY_CODE;Py_PYTHON_H;Py_PYTIME_H;Py_OBJECT_H"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\MSVCRT&quot;;&quot;$(ProjectDir)..\..\cpython\Python&quot;;&quot;$(zlibDir)&quot;"
+				PreprocessorDefinitions="_USRDLL;Py_BUILD_CORE;Py_ENABLE_SHARED;WIN32;_Py_HAVE_ZLIB;VS9_FIX_HACKY_CODE"
 				RuntimeLibrary="2"
 				ForcedIncludeFiles="compat.h;&quot;$(ProjectDir)..\Include\Python.h&quot;"
 			/>
@@ -613,7 +606,6 @@
 				OutputFile="$(OutDir)\$(PyDllName).dll"
 				IgnoreDefaultLibraryNames="libc"
 				ProgramDatabaseFile="$(OutDir)$(PyDllName).pdb"
-				BaseAddress="0x1e000000"
 				ImportLibrary="$(OutDirPGI)$(PyDllName).lib"
 				TargetMachine="17"
 			/>
@@ -647,23 +639,11 @@
 			Name="Include"
 			>
 			<File
-				RelativePath="..\..\cpython\Modules\_io\_iomodule.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\_math.h"
-				>
-			</File>
-			<File
 				RelativePath="..\..\cpython\Include\abstract.h"
 				>
 			</File>
 			<File
 				RelativePath="..\..\cpython\Include\accu.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\cjkcodecs\alg_jisx0201.h"
 				>
 			</File>
 			<File
@@ -683,11 +663,11 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Include\bytearrayobject.h"
+				RelativePath="..\..\cpython\Include\bytes_methods.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Include\bytes_methods.h"
+				RelativePath="..\..\cpython\Include\bytearrayobject.h"
 				>
 			</File>
 			<File
@@ -700,14 +680,6 @@
 			</File>
 			<File
 				RelativePath="..\..\cpython\Include\ceval.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Python\ceval_gil.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\cjkcodecs\cjkcodecs.h"
 				>
 			</File>
 			<File
@@ -731,23 +703,11 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Python\condvar.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Objects\stringlib\count.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\zlib\crc32.h"
+				RelativePath="..\..\cpython\Include\context.h"
 				>
 			</File>
 			<File
 				RelativePath="..\..\cpython\Include\datetime.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\zlib\deflate.h"
 				>
 			</File>
 			<File
@@ -759,15 +719,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Include\dtoa.h"
-				>
-			</File>
-			<File
 				RelativePath="..\..\cpython\Include\dynamic_annotations.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\cjkcodecs\emu_jisx0213_2000.h"
 				>
 			</File>
 			<File
@@ -779,15 +731,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\PC\errmap.h"
-				>
-			</File>
-			<File
 				RelativePath="..\..\cpython\Include\eval.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Objects\stringlib\fastsearch.h"
 				>
 			</File>
 			<File
@@ -796,10 +740,6 @@
 			</File>
 			<File
 				RelativePath="..\..\cpython\Include\fileutils.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Objects\stringlib\find.h"
 				>
 			</File>
 			<File
@@ -827,31 +767,39 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\hashtable.h"
-				>
-			</File>
-			<File
 				RelativePath="..\..\cpython\Include\import.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Python\importdl.h"
+				RelativePath="..\..\cpython\Include\internal\ceval.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\zlib\inffast.h"
+				RelativePath="..\..\cpython\Include\internal\condvar.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\zlib\inffixed.h"
+				RelativePath="..\..\cpython\Include\internal\context.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\zlib\inflate.h"
+				RelativePath="..\..\cpython\Include\internal\gil.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\zlib\inftrees.h"
+				RelativePath="..\..\cpython\Include\internal\hamt.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Include\internal\mem.h"
+				>
+			</File>
+			<File
+				RelativePath="..\Include\internal\pystate.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Include\internal\warnings.h"
 				>
 			</File>
 			<File
@@ -872,30 +820,6 @@
 			</File>
 			<File
 				RelativePath="..\..\cpython\Include\longobject.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\cjkcodecs\mappings_cn.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\cjkcodecs\mappings_hk.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\cjkcodecs\mappings_jisx0213_pair.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\cjkcodecs\mappings_jp.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\cjkcodecs\mappings_kr.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\cjkcodecs\mappings_tw.h"
 				>
 			</File>
 			<File
@@ -920,10 +844,6 @@
 			</File>
 			<File
 				RelativePath="..\..\cpython\Include\moduleobject.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\cjkcodecs\multibytecodec.h"
 				>
 			</File>
 			<File
@@ -959,15 +879,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Parser\parser.h"
-				>
-			</File>
-			<File
 				RelativePath="..\..\cpython\Include\parsetok.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Objects\stringlib\partition.h"
 				>
 			</File>
 			<File
@@ -983,6 +895,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\cpython\Include\pyhash.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\cpython\Include\py_curses.h"
 				>
 			</File>
@@ -992,10 +908,6 @@
 			</File>
 			<File
 				RelativePath="..\..\cpython\Include\pycapsule.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\PC\pyconfig.h"
 				>
 			</File>
 			<File
@@ -1019,23 +931,23 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Include\pygetopt.h"
+				RelativePath="..\..\cpython\Include\internal\pygetopt.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Include\pyhash.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Include\pylifecycle.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Include\pymacro.h"
+				RelativePath="..\Include\pylifecycle.h"
 				>
 			</File>
 			<File
 				RelativePath="..\..\cpython\Include\pymath.h"
+				>
+			</File>
+			<File
+				RelativePath="..\Include\pytime.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Include\pymacro.h"
 				>
 			</File>
 			<File
@@ -1047,7 +959,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Include\pystate.h"
+				RelativePath="..\Include\pystate.h"
 				>
 			</File>
 			<File
@@ -1055,11 +967,15 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\cpython\Include\pystrtod.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\cpython\Include\pystrhex.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Include\pystrtod.h"
+				RelativePath="..\..\cpython\Include\dtoa.h"
 				>
 			</File>
 			<File
@@ -1079,23 +995,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Include\pytime.h"
-				>
-			</File>
-			<File
-				RelativePath="..\Include\pytime.h"
-				>
-			</File>
-			<File
 				RelativePath="..\..\cpython\Include\rangeobject.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Objects\stringlib\replace.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\rotatingtree.h"
 				>
 			</File>
 			<File
@@ -1104,22 +1004,6 @@
 			</File>
 			<File
 				RelativePath="..\..\cpython\Include\sliceobject.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Objects\stringlib\split.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\sre.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\sre_constants.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\sre_lib.h"
 				>
 			</File>
 			<File
@@ -1139,23 +1023,11 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Python\thread_nt.h"
-				>
-			</File>
-			<File
 				RelativePath="..\..\cpython\Include\token.h"
 				>
 			</File>
 			<File
-				RelativePath="..\Parser\tokenizer.h"
-				>
-			</File>
-			<File
 				RelativePath="..\..\cpython\Include\traceback.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\zlib\trees.h"
 				>
 			</File>
 			<File
@@ -1171,43 +1043,219 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\cpython\Include\weakrefobject.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\_math.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\hashtable.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\rotatingtree.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\sre.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\sre_constants.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\sre_lib.h"
+				>
+			</File>
+			<File
+				RelativePath="..\Modules\_io\_iomodule.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\cjkcodecs\alg_jisx0201.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\cjkcodecs\cjkcodecs.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\cjkcodecs\emu_jisx0213_2000.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\cjkcodecs\mappings_cn.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\cjkcodecs\mappings_hk.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\cjkcodecs\mappings_jisx0213_pair.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\cjkcodecs\mappings_jp.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\cjkcodecs\mappings_kr.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\cjkcodecs\mappings_tw.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\cjkcodecs\multibytecodec.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Objects\stringlib\count.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Objects\stringlib\fastsearch.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Objects\stringlib\find.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Objects\stringlib\partition.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Objects\stringlib\replace.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Objects\stringlib\split.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\cpython\Objects\unicodetype_db.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Include\weakrefobject.h"
+				RelativePath="..\..\cpython\Parser\parser.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Parser\tokenizer.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\PC\errmap.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\PC\pyconfig.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Python\ceval_gil.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Python\condvar.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Python\importdl.h"
+				>
+			</File>
+			<File
+				RelativePath="..\Python\thread_nt.h"
 				>
 			</File>
 			<File
 				RelativePath="..\..\cpython\Python\wordcode_helpers.h"
 				>
 			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\zlib\zconf.h"
+		</Filter>
+		<Filter
+			Name="ExternalsInclude"
+			>
+			<Filter
+				Name="zlib"
 				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\zlib\zconf.in.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\zlib\zlib.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\zlib\zutil.h"
-				>
-			</File>
+        <File
+          RelativePath="$(zlibDir)\crc32.h"
+          >
+        </File>
+        <File
+          RelativePath="$(zlibDir)\deflate.h"
+          >
+        </File>
+        <File
+          RelativePath="$(zlibDir)\inffast.h"
+          >
+        </File>
+        <File
+          RelativePath="$(zlibDir)\inffixed.h"
+          >
+        </File>
+        <File
+          RelativePath="$(zlibDir)\inflate.h"
+          >
+        </File>
+        <File
+          RelativePath="$(zlibDir)\inftrees.h"
+          >
+        </File>
+        <File
+          RelativePath="$(zlibDir)\trees.h"
+          >
+        </File>
+        <File
+          RelativePath="$(zlibDir)\zconf.h"
+          >
+        </File>
+        <File
+          RelativePath="$(zlibDir)\zconf.in.h"
+          >
+        </File>
+        <File
+          RelativePath="$(zlibDir)\zlib.h"
+          >
+        </File>
+        <File
+          RelativePath="$(zlibDir)\zutil.h"
+          >
+        </File>
+			</Filter>
 		</Filter>
 		<Filter
 			Name="Modules"
 			>
+			<File
+				RelativePath="..\Modules\_abc.c"
+				>
+			</File>
 			<File
 				RelativePath="..\Modules\_asynciomodule.c"
 				>
 			</File>
 			<File
 				RelativePath="..\..\cpython\Modules\_bisectmodule.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\_blake2\blake2module.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\_blake2\blake2b_impl.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\_blake2\blake2s_impl.c"
 				>
 			</File>
 			<File
@@ -1219,11 +1267,11 @@
 				>
 			</File>
 			<File
-				RelativePath="..\Modules\_csv.c"
+				RelativePath="..\..\cpython\Modules\_contextvarsmodule.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\_datetimemodule.c"
+				RelativePath="..\..\cpython\Modules\_csv.c"
 				>
 			</File>
 			<File
@@ -1235,7 +1283,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\_json.c"
+				RelativePath="..\Modules\_json.c"
 				>
 			</File>
 			<File
@@ -1251,19 +1299,15 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\_opcode.c"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\_operator.c"
-				>
-			</File>
-			<File
 				RelativePath="..\Modules\_pickle.c"
 				>
 			</File>
 			<File
 				RelativePath="..\..\cpython\Modules\_randommodule.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\_sha3\sha3module.c"
 				>
 			</File>
 			<File
@@ -1279,19 +1323,11 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\_threadmodule.c"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\_tracemalloc.c"
-				>
-			</File>
-			<File
 				RelativePath="..\..\cpython\Modules\_weakref.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\arraymodule.c"
+				RelativePath="..\Modules\arraymodule.c"
 				>
 			</File>
 			<File
@@ -1307,19 +1343,11 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\_blake2\blake2b_impl.c"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\_blake2\blake2module.c"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\_blake2\blake2s_impl.c"
-				>
-			</File>
-			<File
 				RelativePath="..\..\cpython\Modules\cmathmodule.c"
+				>
+			</File>
+			<File
+				RelativePath="..\Modules\_datetimemodule.c"
 				>
 			</File>
 			<File
@@ -1327,11 +1355,11 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\faulthandler.c"
+				RelativePath="..\Modules\faulthandler.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\gcmodule.c"
+				RelativePath="..\Modules\gcmodule.c"
 				>
 			</File>
 			<File
@@ -1343,7 +1371,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\main.c"
+				RelativePath="..\Modules\main.c"
 				>
 			</File>
 			<File
@@ -1356,6 +1384,14 @@
 			</File>
 			<File
 				RelativePath="..\..\cpython\Modules\mmapmodule.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\_opcode.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\_operator.c"
 				>
 			</File>
 			<File
@@ -1379,19 +1415,23 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\_sha3\sha3module.c"
-				>
-			</File>
-			<File
 				RelativePath="..\..\cpython\Modules\sha512module.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\signalmodule.c"
+				RelativePath="..\Modules\signalmodule.c"
 				>
 			</File>
 			<File
 				RelativePath="..\..\cpython\Modules\symtablemodule.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\_threadmodule.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Modules\_tracemalloc.c"
 				>
 			</File>
 			<File
@@ -1403,86 +1443,14 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\zipimport.c"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Modules\zlibmodule.c"
+				RelativePath="..\Modules\zipimport.c"
 				>
 			</File>
 			<Filter
 				Name="_io"
 				>
 				<File
-					RelativePath="..\..\cpython\Modules\_io\_iomodule.c"
-					>
-					<FileConfiguration
-						Name="Release|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="PGInstrument|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="PGInstrument|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="PGUpdate|Win32"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="PGUpdate|x64"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
-						/>
-					</FileConfiguration>
-				</File>
-				<File
-					RelativePath="..\..\cpython\Modules\_io\bufferedio.c"
+					RelativePath="..\..\cpython\Modules\_io\fileio.c"
 					>
 				</File>
 				<File
@@ -1490,15 +1458,15 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\cpython\Modules\_io\fileio.c"
+					RelativePath="..\..\cpython\Modules\_io\stringio.c"
+					>
+				</File>
+				<File
+					RelativePath="..\..\cpython\Modules\_io\bufferedio.c"
 					>
 				</File>
 				<File
 					RelativePath="..\..\cpython\Modules\_io\iobase.c"
-					>
-				</File>
-				<File
-					RelativePath="..\..\cpython\Modules\_io\stringio.c"
 					>
 				</File>
 				<File
@@ -1573,53 +1541,73 @@
 						/>
 					</FileConfiguration>
 				</File>
-			</Filter>
-			<Filter
-				Name="zlib"
-				>
 				<File
-					RelativePath="..\..\cpython\Modules\zlib\adler32.c"
+					RelativePath="..\..\cpython\Modules\_io\_iomodule.c"
 					>
-				</File>
-				<File
-					RelativePath="..\..\cpython\Modules\zlib\compress.c"
-					>
-				</File>
-				<File
-					RelativePath="..\..\cpython\Modules\zlib\crc32.c"
-					>
-				</File>
-				<File
-					RelativePath="..\..\cpython\Modules\zlib\deflate.c"
-					>
-				</File>
-				<File
-					RelativePath="..\..\cpython\Modules\zlib\infback.c"
-					>
-				</File>
-				<File
-					RelativePath="..\..\cpython\Modules\zlib\inffast.c"
-					>
-				</File>
-				<File
-					RelativePath="..\..\cpython\Modules\zlib\inflate.c"
-					>
-				</File>
-				<File
-					RelativePath="..\..\cpython\Modules\zlib\inftrees.c"
-					>
-				</File>
-				<File
-					RelativePath="..\..\cpython\Modules\zlib\trees.c"
-					>
-				</File>
-				<File
-					RelativePath="..\..\cpython\Modules\zlib\uncompr.c"
-					>
-				</File>
-				<File
-					RelativePath="..\..\cpython\Modules\zlib\zutil.c"
-					>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Debug|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PGInstrument|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PGInstrument|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PGUpdate|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PGUpdate|x64"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							AdditionalIncludeDirectories="&quot;$(ProjectDir)..\Compat\WindowsSDK\um&quot;"
+						/>
+					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -1650,11 +1638,11 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\cpython\Modules\_winapi.c"
+					RelativePath="..\..\cpython\Modules\cjkcodecs\multibytecodec.c"
 					>
 				</File>
 				<File
-					RelativePath="..\..\cpython\Modules\cjkcodecs\multibytecodec.c"
+					RelativePath="..\..\cpython\Modules\_winapi.c"
 					>
 				</File>
 			</Filter>
@@ -1687,6 +1675,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\Objects\call.c"
+				>
+			</File>
+			<File
 				RelativePath="..\..\cpython\Objects\capsule.c"
 				>
 			</File>
@@ -1707,7 +1699,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Objects\descrobject.c"
+				RelativePath="..\Objects\descrobject.c"
 				>
 			</File>
 			<File
@@ -1803,7 +1795,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Objects\genobject.c"
+				RelativePath="..\Objects\genobject.c"
 				>
 			</File>
 			<File
@@ -1811,11 +1803,11 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Objects\listobject.c"
+				RelativePath="..\Objects\listobject.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Objects\longobject.c"
+				RelativePath="..\Objects\longobject.c"
 				>
 			</File>
 			<File
@@ -1827,7 +1819,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Objects\moduleobject.c"
+				RelativePath="..\Objects\moduleobject.c"
 				>
 			</File>
 			<File
@@ -1843,7 +1835,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\Objects\odictobject.c"
+				RelativePath="..\..\cpython\Objects\odictobject.c"
 				>
 			</File>
 			<File
@@ -1851,7 +1843,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\Objects\setobject.c"
+				RelativePath="..\..\cpython\Objects\setobject.c"
 				>
 			</File>
 			<File
@@ -1971,10 +1963,6 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\PC\invalid_parameter_handler.c"
-				>
-			</File>
-			<File
 				RelativePath="..\..\cpython\Parser\listnode.c"
 				>
 			</File>
@@ -1999,7 +1987,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\Parser\tokenizer.c"
+				RelativePath="..\..\cpython\Parser\tokenizer.c"
 				>
 			</File>
 		</Filter>
@@ -2007,11 +1995,15 @@
 			Name="PC"
 			>
 			<File
-				RelativePath="..\..\cpython\PC\config.c"
+				RelativePath="..\..\cpython\PC\invalid_parameter_handler.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\PC\dl_nt.c"
+				RelativePath="..\..\cpython\PC\winreg.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\PC\config.c"
 				>
 			</File>
 			<File
@@ -2022,16 +2014,8 @@
 				RelativePath="..\..\cpython\PC\msvcrtmodule.c"
 				>
 			</File>
-			<File
-				RelativePath="..\..\cpython\Python\pyhash.c"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Python\random.c"
-				>
-			</File>
-			<File
-				RelativePath="..\PC\winreg.c"
+    			<File
+				RelativePath="..\..\cpython\PC\dl_nt.c"
 				>
 			</File>
 		</Filter>
@@ -2039,7 +2023,11 @@
 			Name="Python"
 			>
 			<File
-				RelativePath="..\..\cpython\Python\_warnings.c"
+				RelativePath="..\..\cpython\Python\pyhash.c"
+				>
+			</File>
+			<File
+				RelativePath="..\Python\_warnings.c"
 				>
 			</File>
 			<File
@@ -2051,11 +2039,23 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Python\bltinmodule.c"
+				RelativePath="..\Python\ast_opt.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Python\ceval.c"
+				RelativePath="..\..\cpython\Python\ast_unparse.c"
+				>
+			</File>
+			<File
+				RelativePath="..\Python\bltinmodule.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\cpython\Python\bootstrap_hash.c"
+				>
+			</File>
+			<File
+				RelativePath="..\Python\ceval.c"
 				>
 			</File>
 			<File
@@ -2063,11 +2063,11 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Python\compile.c"
+				RelativePath="..\Python\compile.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Python\dtoa.c"
+				RelativePath="..\Python\context.c"
 				>
 			</File>
 			<File
@@ -2111,7 +2111,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Python\getopt.c"
+				RelativePath="..\Python\getopt.c"
 				>
 			</File>
 			<File
@@ -2127,11 +2127,15 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Python\import.c"
+				RelativePath="..\Python\hamt.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Python\importdl.c"
+				RelativePath="..\Python\import.c"
+				>
+			</File>
+			<File
+				RelativePath="..\Python\importdl.c"
 				>
 			</File>
 			<File
@@ -2151,7 +2155,11 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Python\peephole.c"
+				RelativePath="..\Python\pathconfig.c"
+				>
+			</File>
+			<File
+				RelativePath="..\Python\peephole.c"
 				>
 			</File>
 			<File
@@ -2175,6 +2183,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\cpython\Python\pytime.c"
+				>
+			</File>
+			<File
 				RelativePath="..\Python\pystate.c"
 				>
 			</File>
@@ -2191,15 +2203,15 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\cpython\Python\dtoa.c"
+				>
+			</File>
+			<File
 				RelativePath="..\..\cpython\Python\Python-ast.c"
 				>
 			</File>
 			<File
 				RelativePath="..\..\cpython\Python\pythonrun.c"
-				>
-			</File>
-			<File
-				RelativePath="..\..\cpython\Python\pytime.c"
 				>
 			</File>
 			<File
@@ -2211,17 +2223,73 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Python\sysmodule.c"
+				RelativePath="..\Python\sysmodule.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Python\thread.c"
+				RelativePath="..\Python\thread.c"
 				>
 			</File>
 			<File
 				RelativePath="..\Python\traceback.c"
 				>
 			</File>
+		</Filter>
+		<Filter
+			Name="ExternalsSource"
+			>
+			<Filter
+				Name="zlib"
+				>
+        <File
+          RelativePath="..\..\cpython\Modules\zlibmodule.c"
+          >
+        </File>
+        <File
+          RelativePath="$(zlibDir)\adler32.c"
+          >
+        </File>
+        <File
+          RelativePath="$(zlibDir)\compress.c"
+          >
+        </File>
+        <File
+          RelativePath="$(zlibDir)\crc32.c"
+          >
+        </File>
+        <File
+          RelativePath="$(zlibDir)\deflate.c"
+          >
+        </File>
+        <File
+          RelativePath="$(zlibDir)\infback.c"
+          >
+        </File>
+        <File
+          RelativePath="$(zlibDir)\inffast.c"
+          >
+        </File>
+        <File
+          RelativePath="$(zlibDir)\inflate.c"
+          >
+        </File>
+        <File
+          RelativePath="$(zlibDir)\inftrees.c"
+          >
+        </File>
+        <File
+          RelativePath="$(zlibDir)\trees.c"
+          >
+        </File>
+        <File
+          RelativePath="$(zlibDir)\uncompr.c"
+          >
+        </File>
+        <File
+          RelativePath="$(zlibDir)\zutil.c"
+          >
+        </File>
+			</Filter>
 		</Filter>
 		<Filter
 			Name="Resource Files"

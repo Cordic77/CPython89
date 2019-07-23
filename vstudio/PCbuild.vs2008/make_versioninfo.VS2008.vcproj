@@ -72,7 +72,6 @@
 				IgnoreAllDefaultLibraries="true"
 				ProgramDatabaseFile="$(TargetDir)$(TargetName).pdb"
 				SubSystem="1"
-				BaseAddress="0x1d000000"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -221,7 +220,6 @@
 				IgnoreAllDefaultLibraries="true"
 				ProgramDatabaseFile="$(TargetDir)$(TargetName).pdb"
 				SubSystem="1"
-				BaseAddress="0x1d000000"
 			/>
 			<Tool
 				Name="VCALinkTool"

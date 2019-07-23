@@ -635,7 +635,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Programs\_freeze_importlib.c"
+			RelativePath="..\Programs\_freeze_importlib.c"
 				>
 			</File>
 		</Filter>

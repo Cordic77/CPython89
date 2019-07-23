@@ -281,6 +281,7 @@ PyImport_ExecCodeModuleWithPathnames
 PyImport_GetImporter
 PyImport_GetMagicNumber
 PyImport_GetMagicTag
+PyImport_GetModule
 PyImport_GetModuleDict
 PyImport_Import
 PyImport_ImportFrozenModule
@@ -534,6 +535,7 @@ PySlice_New
 PySlice_Type
 PySlice_Unpack
 PySortWrapper_Type
+PyInterpreterState_GetID
 PyState_AddModule
 PyState_FindModule
 PyState_RemoveModule
@@ -565,6 +567,13 @@ PyThreadState_GetDict
 PyThreadState_New
 PyThreadState_SetAsyncExc
 PyThreadState_Swap
+PyThread_tss_alloc
+PyThread_tss_create
+PyThread_tss_delete
+PyThread_tss_free
+PyThread_tss_get
+PyThread_tss_is_created
+PyThread_tss_set
 PyTraceBack_Here
 PyTraceBack_Print
 PyTraceBack_Type
@@ -746,6 +755,7 @@ Py_SetProgramName
 Py_SetPythonHome
 Py_SetRecursionLimit
 Py_SymtableString
+Py_UTF8Mode
 Py_VaBuildValue
 _PyArg_ParseTupleAndKeywords_SizeT
 _PyArg_ParseTuple_SizeT

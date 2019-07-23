@@ -57,7 +57,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/ignore:4099"
-				AdditionalDependencies="msvcrtd.lib oldnames.lib c99compatd_vs2008.lib ws2_32.lib &quot;$(opensslDir)\out32_lib-vs2008-MDd\libeay32.lib&quot; &quot;$(opensslDir)\out32_lib-vs2008-MDd\ssleay32.lib&quot;"
+				AdditionalDependencies="msvcrtd.lib oldnames.lib c99compatd_vs2008.lib ws2_32.lib crypt32.lib &quot;$(opensslDir)\out32_lib-vs2008-MDd\libcrypto.lib&quot; &quot;$(opensslDir)\out32_lib-vs2008-MDd\libssl.lib&quot;"
 				AdditionalLibraryDirectories="&quot;$(c99compatDir)\lib\dll-ansi-x86-debug&quot;"
 				IgnoreAllDefaultLibraries="true"
 			/>
@@ -122,7 +122,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/ignore:4099"
-				AdditionalDependencies="msvcrtd.lib oldnames.lib c99compatd_vs2008.lib ws2_32.lib &quot;$(opensslDir)\out64_lib-vs2008-MDd\libeay32.lib&quot; &quot;$(opensslDir)\out64_lib-vs2008-MDd\ssleay32.lib&quot;"
+				AdditionalDependencies="msvcrtd.lib oldnames.lib c99compatd_vs2008.lib ws2_32.lib crypt32.lib &quot;$(opensslDir)\out64_lib-vs2008-MDd\libcrypto.lib&quot; &quot;$(opensslDir)\out64_lib-vs2008-MDd\libssl.lib&quot;"
 				AdditionalLibraryDirectories="&quot;$(c99compatDir)\lib\dll-ansi-x64-debug&quot;"
 				IgnoreAllDefaultLibraries="true"
 			/>
@@ -187,7 +187,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/ignore:4099"
-				AdditionalDependencies="msvcrt.lib oldnames.lib c99compat_vs2008.lib ws2_32.lib &quot;$(opensslDir)\out32_lib-vs2008-MDd\libeay32.lib&quot; &quot;$(opensslDir)\out32_lib-vs2008-MDd\ssleay32.lib&quot;"
+				AdditionalDependencies="msvcrt.lib oldnames.lib c99compat_vs2008.lib ws2_32.lib crypt32.lib &quot;$(opensslDir)\out32_lib-vs2008-MDd\libcrypto.lib&quot; &quot;$(opensslDir)\out32_lib-vs2008-MDd\libssl.lib&quot;"
 				AdditionalLibraryDirectories="&quot;$(c99compatDir)\lib\dll-ansi-x86-release&quot;"
 				IgnoreAllDefaultLibraries="true"
 			/>
@@ -253,7 +253,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/ignore:4099"
-				AdditionalDependencies="msvcrt.lib oldnames.lib c99compat_vs2008.lib ws2_32.lib &quot;$(opensslDir)\out64_lib-vs2008-MDd\libeay32.lib&quot; &quot;$(opensslDir)\out64_lib-vs2008-MDd\ssleay32.lib&quot;"
+				AdditionalDependencies="msvcrt.lib oldnames.lib c99compat_vs2008.lib ws2_32.lib crypt32.lib &quot;$(opensslDir)\out64_lib-vs2008-MDd\libcrypto.lib&quot; &quot;$(opensslDir)\out64_lib-vs2008-MDd\libssl.lib&quot;"
 				AdditionalLibraryDirectories="&quot;$(c99compatDir)\lib\dll-ansi-x64-release&quot;"
 				IgnoreAllDefaultLibraries="true"
 			/>
@@ -318,7 +318,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/ignore:4099"
-				AdditionalDependencies="ws2_32.lib $(opensslDir)\out32_lib-vs2008-MDd\libeay32.lib $(opensslDir)\out32_lib-vs2008-MDd\ssleay32.lib"
+				AdditionalDependencies="ws2_32.lib crypt32.lib $(opensslDir)\out32_lib-vs2008-MDd\libcrypto.lib $(opensslDir)\out32_lib-vs2008-MDd\libssl.lib"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -382,7 +382,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/ignore:4099"
-				AdditionalDependencies="ws2_32.lib $(opensslDir)\out64_lib-vs2008-MDd\libeay32.lib $(opensslDir)\out64_lib-vs2008-MDd\ssleay32.lib"
+				AdditionalDependencies="ws2_32.lib crypt32.lib $(opensslDir)\out64_lib-vs2008-MDd\libcrypto.lib $(opensslDir)\out64_lib-vs2008-MDd\libssl.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -446,7 +446,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/ignore:4099"
-				AdditionalDependencies="ws2_32.lib $(opensslDir)\out32_lib-vs2008-MDd\libeay32.lib $(opensslDir)\out32_lib-vs2008-MDd\ssleay32.lib"
+				AdditionalDependencies="ws2_32.lib crypt32.lib $(opensslDir)\out32_lib-vs2008-MDd\libcrypto.lib $(opensslDir)\out32_lib-vs2008-MDd\libssl.lib"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -510,7 +510,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/ignore:4099"
-				AdditionalDependencies="ws2_32.lib $(opensslDir)\out64_lib-vs2008-MDd\libeay32.lib $(opensslDir)\out64_lib-vs2008-MDd\ssleay32.lib"
+				AdditionalDependencies="ws2_32.lib crypt32.lib $(opensslDir)\out64_lib-vs2008-MDd\libcrypto.lib $(opensslDir)\out64_lib-vs2008-MDd\libssl.lib"
 				TargetMachine="17"
 			/>
 			<Tool

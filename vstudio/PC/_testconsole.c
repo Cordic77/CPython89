@@ -59,10 +59,10 @@ _testconsole_write_input_impl(PyObject *module, PyObject *file,
     if (!rec)
         goto error;
     memset(rec, 0, sizeof(INPUT_RECORD) * size);
-
+    
   { INPUT_RECORD *prec = rec;
     DWORD i;
-    for (/*DWORD*/ i = 0; i < size; ++i, ++p, ++prec) {
+    for (/*DWORD*/ i = 0; i < size; ++i, ++p, ++prec) {  /*C89 -- mixed declarations and code*/
         prec->EventType = KEY_EVENT;
         prec->Event.KeyEvent.bKeyDown = TRUE;
         prec->Event.KeyEvent.wRepeatCount = 10;
