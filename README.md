@@ -13,7 +13,7 @@ Project | Description
 
 As of version v3.5.0 the ‘CPython’ source code requires a ISO/IEC 9899:1999 compatible compiler for successful compilation.
 
-For people who don't have the option – or do not want to – to upgrade to a C99 compatible compiler, this decision might be unfortunate. To this end, this project aims to provide adapted source code files (along with upgraded VS9 project files) to allow for compilation with Microsoft's Visual Studio 2008 IDE.
+For people who don't have the option – or do not want – to upgrade to a C99 compatible compiler, this decision might be unfortunate. To this end, this project aims to provide adapted source code files (along with upgraded VS9 project files) to allow for compilation with Microsoft's Visual Studio 2008 IDE.
 
 The achievement of this goal requires several changes to the Python's source code files, all of which can be found under the ./vstudio directory, which – with the exception of the ‘PCbuild.vs2008’ project folder – replicates CPython's source tree structure.
 

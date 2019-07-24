@@ -42,7 +42,8 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="_CONSOLE"
+				PreprocessorDefinitions="_CONSOLE;Py_PYSTATE_H"
+				ForcedIncludeFiles="compat.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -111,7 +112,8 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="_CONSOLE"
+				PreprocessorDefinitions="_CONSOLE;Py_PYSTATE_H"
+				ForcedIncludeFiles="compat.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -180,7 +182,8 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="_CONSOLE"
+				PreprocessorDefinitions="_CONSOLE;Py_PYSTATE_H"
+				ForcedIncludeFiles="compat.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -250,7 +253,8 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="_CONSOLE"
+				PreprocessorDefinitions="_CONSOLE;Py_PYSTATE_H"
+				ForcedIncludeFiles="compat.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -319,8 +323,9 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="_CONSOLE"
+				PreprocessorDefinitions="_CONSOLE;Py_PYSTATE_H"
 				RuntimeLibrary="0"
+				ForcedIncludeFiles="compat.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -385,8 +390,9 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="_CONSOLE"
+				PreprocessorDefinitions="_CONSOLE;Py_PYSTATE_H"
 				RuntimeLibrary="0"
+				ForcedIncludeFiles="compat.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -451,8 +457,9 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="_CONSOLE"
+				PreprocessorDefinitions="_CONSOLE;Py_PYSTATE_H"
 				RuntimeLibrary="0"
+				ForcedIncludeFiles="compat.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -517,8 +524,9 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="_CONSOLE"
+				PreprocessorDefinitions="_CONSOLE;Py_PYSTATE_H"
 				RuntimeLibrary="0"
+				ForcedIncludeFiles="compat.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -635,7 +643,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-			RelativePath="..\Programs\_freeze_importlib.c"
+				RelativePath="..\Programs\_freeze_importlib.c"
 				>
 			</File>
 		</Filter>

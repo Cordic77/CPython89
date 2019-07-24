@@ -1271,7 +1271,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\_csv.c"
+				RelativePath="..\Modules\_csv.c"
 				>
 			</File>
 			<File

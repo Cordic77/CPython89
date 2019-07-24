@@ -304,7 +304,7 @@ http://cvsweb.netbsd.org/bsdweb.cgi/src/lib/libc/net/getaddrinfo.c.diff?r1=1.82&
 
 #if defined(_MSC_VER) && _MSC_VER >= 1800  /*VS9COMPAT: see ‘10.0.15063.0\um\VersionHelpers.h’*/
 /* Provides the IsWindows7SP1OrGreater() function */
-#include <VersionHelpers.h>
+#include <versionhelpers.h>
 #endif
 /* remove some flags on older version Windows during run-time.
    https://msdn.microsoft.com/en-us/library/windows/desktop/ms738596.aspx */
@@ -562,15 +562,18 @@ select_error(void)
 #  define SET_SOCK_ERROR(err) WSASetLastError(err)
 #  define SOCK_TIMEOUT_ERR WSAEWOULDBLOCK
 #  define SOCK_INPROGRESS_ERR WSAEWOULDBLOCK
-#  define SUPPRESS_DEPRECATED_CALL __pragma(warning(suppress: 4996))
 #else
 #  define GET_SOCK_ERROR errno
 #  define SET_SOCK_ERROR(err) do { errno = err; } while (0)
 #  define SOCK_TIMEOUT_ERR EWOULDBLOCK
 #  define SOCK_INPROGRESS_ERR EINPROGRESS
-#  define SUPPRESS_DEPRECATED_CALL
 #endif
 
+#ifdef _MSC_VER
+#  define SUPPRESS_DEPRECATED_CALL __pragma(warning(suppress: 4996))
+#else
+#  define SUPPRESS_DEPRECATED_CALL
+#endif
 
 #ifdef MS_WINDOWS
 /* Does WSASocket() support the WSA_FLAG_NO_HANDLE_INHERIT flag? */
@@ -1881,7 +1884,7 @@ getsockaddrarg(PySocketSockObject *s, PyObject *args,
         const char *interfaceName;
         int protoNumber;
         int hatype = 0;
-        int pkttype = 0;
+        int pkttype = PACKET_HOST;
         Py_buffer haddr = {NULL, NULL};
 
         if (!PyTuple_Check(args)) {
@@ -1912,7 +1915,7 @@ getsockaddrarg(PySocketSockObject *s, PyObject *args,
         if (protoNumber < 0 || protoNumber > 0xffff) {
             PyErr_SetString(
                 PyExc_OverflowError,
-                "getsockaddrarg: protoNumber must be 0-65535.");
+                "getsockaddrarg: proto must be 0-65535.");
             PyBuffer_Release(&haddr);
             return 0;
         }
@@ -2926,7 +2929,7 @@ PyDoc_STRVAR(bind_doc,
 \n\
 Bind the socket to a local address.  For IP sockets, the address is a\n\
 pair (host, port); the host must refer to the local host. For raw packet\n\
-sockets the address is a tuple (ifname, proto [,pkttype [,hatype]])");
+sockets the address is a tuple (ifname, proto [,pkttype [,hatype [,addr]]])");
 
 
 /* s.close() method.

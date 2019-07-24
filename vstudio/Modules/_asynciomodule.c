@@ -59,7 +59,7 @@ typedef enum {
     PyObject_HEAD                                                           \
     PyObject *prefix##_loop;                                                \
     PyObject *prefix##_callback0;                                           \
-    PyContext *prefix##_context0;                                           \
+    PyObject *prefix##_context0;                                            \
     PyObject *prefix##_callbacks;                                           \
     PyObject *prefix##_exception;                                           \
     PyObject *prefix##_result;                                              \
@@ -78,7 +78,7 @@ typedef struct {
     FutureObj_HEAD(task)
     PyObject *task_fut_waiter;
     PyObject *task_coro;
-    PyContext *task_context;
+    PyObject *task_context;
     int task_must_cancel;
     int task_log_destroy_pending;
 } TaskObj;
@@ -341,7 +341,7 @@ get_event_loop(void)
 
 
 static int
-call_soon(PyObject *loop, PyObject *func, PyObject *arg, PyContext *ctx)
+call_soon(PyObject *loop, PyObject *func, PyObject *arg, PyObject *ctx)
 {
     PyObject *handle;
     PyObject *stack[3];
@@ -452,7 +452,7 @@ future_schedule_callbacks(FutureObj *fut)
         PyObject *cb = PyTuple_GET_ITEM(cb_tup, 0);
         PyObject *ctx = PyTuple_GET_ITEM(cb_tup, 1);
 
-        if (call_soon(fut->fut_loop, cb, (PyObject *)fut, (PyContext *)ctx)) {
+        if (call_soon(fut->fut_loop, cb, (PyObject *)fut, ctx)) {
             /* If an error occurs in pure-Python implementation,
                all callbacks are cleared. */
             Py_CLEAR(fut->fut_callbacks);
@@ -620,7 +620,7 @@ future_get_result(FutureObj *fut, PyObject **result)
 }
 
 static PyObject *
-future_add_done_callback(FutureObj *fut, PyObject *arg, PyContext *ctx)
+future_add_done_callback(FutureObj *fut, PyObject *arg, PyObject *ctx)
 {
     if (!future_is_alive(fut)) {
         PyErr_SetString(PyExc_RuntimeError, "uninitialized Future object");
@@ -908,17 +908,16 @@ _asyncio_Future_add_done_callback_impl(FutureObj *self, PyObject *fn,
 /*[clinic end generated code: output=7ce635bbc9554c1e input=15ab0693a96e9533]*/
 {
     if (context == NULL) {
-        context = (PyObject *)PyContext_CopyCurrent();
+        context = PyContext_CopyCurrent();
         if (context == NULL) {
             return NULL;
         }
-      { PyObject *res = future_add_done_callback(
-            self, fn, (PyContext *)context);  /*C89 -- mixed declarations and code*/
+      { PyObject *res = future_add_done_callback(self, fn, context);  /*C89 -- mixed declarations and code*/
         Py_DECREF(context);
         return res;
 	  }
     }
-    return future_add_done_callback(self, fn, (PyContext *)context);
+    return future_add_done_callback(self, fn, context);
 }
 
 /*[clinic input]
@@ -1802,7 +1801,7 @@ static PyGetSetDef TaskStepMethWrapper_getsetlist[] = {
 };
 
 #if !defined(ISO_C99) || (ISO_C99 == 1)  /*C89 -- designated initializers aren't supported*/
-PyTypeObject TaskStepMethWrapper_Type = {
+static PyTypeObject TaskStepMethWrapper_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
     "TaskStepMethWrapper",
     .tp_basicsize = sizeof(TaskStepMethWrapper),
@@ -1816,7 +1815,7 @@ PyTypeObject TaskStepMethWrapper_Type = {
     .tp_clear = (inquiry)TaskStepMethWrapper_clear,
 };
 #else
-PyTypeObject TaskStepMethWrapper_Type = {
+static PyTypeObject TaskStepMethWrapper_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
     "TaskStepMethWrapper",
 };
@@ -1900,7 +1899,7 @@ TaskWakeupMethWrapper_dealloc(TaskWakeupMethWrapper *o)
 }
 
 #if !defined(ISO_C99) || (ISO_C99 == 1)  /*C89 -- designated initializers aren't supported*/
-PyTypeObject TaskWakeupMethWrapper_Type = {
+static PyTypeObject TaskWakeupMethWrapper_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
     "TaskWakeupMethWrapper",
     .tp_basicsize = sizeof(TaskWakeupMethWrapper),
@@ -1913,7 +1912,7 @@ PyTypeObject TaskWakeupMethWrapper_Type = {
     .tp_clear = (inquiry)TaskWakeupMethWrapper_clear,
 };
 #else
-PyTypeObject TaskWakeupMethWrapper_Type = {
+static PyTypeObject TaskWakeupMethWrapper_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
     "TaskWakeupMethWrapper",
 };
@@ -2807,14 +2806,19 @@ set_exception:
 
             if (task->task_must_cancel) {
                 PyObject *r;
-                r = future_cancel(fut);
+                int is_true;
+                r = _PyObject_CallMethodId(result, &PyId_cancel, NULL);
                 if (r == NULL) {
                     return NULL;
                 }
-                if (r == Py_True) {
+                is_true = PyObject_IsTrue(r);
+                Py_DECREF(r);
+                if (is_true < 0) {
+                    return NULL;
+                }
+                else if (is_true) {
                     task->task_must_cancel = 0;
                 }
-                Py_DECREF(r);
             }
 
             Py_RETURN_NONE;

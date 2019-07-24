@@ -551,7 +551,7 @@
 			Name="Source Files"
 			>
 			<File
-				RelativePath="..\..\cpython\Modules\_lzmamodule.c"
+				RelativePath="..\Modules\_lzmamodule.c"
 				>
 			</File>
 		</Filter>

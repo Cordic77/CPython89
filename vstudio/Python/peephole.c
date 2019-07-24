@@ -141,7 +141,7 @@ fold_tuple_on_constants(_Py_CODEUNIT *codestr, Py_ssize_t c_start,
         return -1;
     }
 
-    for (/*Py_ssize_t*/ i = 0, pos = c_start; i < n; i++, pos++) {  /*C89 -- mixed declarations and code*/
+    for (/*Py_ssize_t*/ i = 0, pos = c_start; i < n; i++, pos++) {
         assert(pos < opcode_end);
         pos = find_op(codestr, pos);
         assert(_Py_OPCODE(codestr[pos]) == LOAD_CONST);

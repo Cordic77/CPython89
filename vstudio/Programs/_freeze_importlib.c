@@ -74,18 +74,25 @@ main(int argc, char *argv[])
     }
     text[text_size] = '\0';
 
+  { _PyCoreConfig config = _PyCoreConfig_INIT;  /*C89 -- mixed declarations and code*/
+    config.program_name = L"./_freeze_importlib";
+    /* Don't install importlib, since it could execute outdated bytecode. */
+    config._disable_importlib = 1;
+
     Py_NoUserSiteDirectory++;
     Py_NoSiteFlag++;
     Py_IgnoreEnvironmentFlag++;
     Py_FrozenFlag++;
 
-    Py_SetProgramName(L"./_freeze_importlib");
-    /* Don't install importlib, since it could execute outdated bytecode. */
-  { _PyInitError err = _Py_InitializeEx_Private(1, 0);  /*C89 -- mixed declarations and code*/
+
+  { _PyInitError err = _Py_InitializeFromConfig(&config);
+    /* No need to call _PyCoreConfig_Clear() since we didn't allocate any
+       memory: program_name is a constant string. */
     if (_Py_INIT_FAILED(err)) {
         _Py_FatalInitError(err);
     }
-  }
+  }}
+
 
     if (strstr(inpath, "_external") != NULL) {
         is_bootstrap = 0;
