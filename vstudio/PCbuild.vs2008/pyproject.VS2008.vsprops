@@ -87,7 +87,7 @@
 	/>
 	<UserMacro
 		Name="tcltkLibDebug"
-		Value="&quot;$(tcltkDir)\lib\tcl86tg.lib&quot; &quot;$(tcltkDir)\lib\tk86tg.lib&quot;"
+		Value="&quot;$(tcltkDir)\lib\tcl86t.lib&quot; &quot;$(tcltkDir)\lib\tk86t.lib&quot;"
 	/>
 	<UserMacro
 		Name="tcltk64Lib"
@@ -95,6 +95,6 @@
 	/>
 	<UserMacro
 		Name="tcltk64LibDebug"
-		Value="&quot;$(tcltk64Dir)\lib\tcl86tg.lib&quot; &quot;$(tcltk64Dir)\lib\tk86tg.lib&quot;"
+		Value="&quot;$(tcltk64Dir)\lib\tcl86t.lib&quot; &quot;$(tcltk64Dir)\lib\tk86t.lib&quot;"
 	/>
 </VisualStudioPropertySheet>

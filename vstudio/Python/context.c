@@ -140,7 +140,7 @@ PyContext_Exit(PyObject *octx)
         return -1;
     }
 
-  { PyThreadState *ts = PyThreadState_GET();  /*C89 -- mixed declarations and code*/
+  { PyThreadState *ts = PyThreadState_GET();
     assert(ts != NULL);
 
     if (ts->context != (PyObject *)ctx) {
@@ -1184,14 +1184,14 @@ error:
 }
 
 static PyObject *
-token_get_var(PyContextToken *self)
+token_get_var(PyContextToken *self, void *Py_UNUSED(ignored))
 {
     Py_INCREF(self->tok_var);
     return (PyObject *)self->tok_var;
 }
 
 static PyObject *
-token_get_old_value(PyContextToken *self)
+token_get_old_value(PyContextToken *self, void *Py_UNUSED(ignored))
 {
     if (self->tok_oldval == NULL) {
         return get_token_missing();

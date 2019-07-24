@@ -2,8 +2,8 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9,00"
-	Name="pywlauncher"
-	ProjectGUID="{1D4B18D3-7C12-4ECB-9179-8531FF876CE6}"
+	Name="venvlauncher"
+	ProjectGUID="{494BAC80-A60C-43A9-99E7-ACB691CE2C4D}"
 	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
@@ -23,7 +23,7 @@
 			InheritedPropertySheets=".\pyproject.VS2008.vsprops;.\debug.VS2008.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
-			CharacterSet="1"
+			CharacterSet="0"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -45,7 +45,7 @@
 				Optimization="0"
 				EnableIntrinsicFunctions="false"
 				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\cpython\Include&quot;;&quot;$(ProjectDir)..\..\cpython\PC&quot;"
-				PreprocessorDefinitions="_WINDOWS"
+				PreprocessorDefinitions="_CONSOLE;VENV_REDIRECT"
 				RuntimeLibrary="1"
 				ProgramDataBaseFileName="$(IntDir)\$(TargetName).pdb"
 			/>
@@ -63,10 +63,10 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="libcmtd.lib oldnames.lib c99compatd_vs2008.lib version.lib"
-				OutputFile="$(OutDir)\pyw_d.exe"
+				OutputFile="$(OutDir)\venvlauncher_d.exe"
 				AdditionalLibraryDirectories="&quot;$(c99compatDir)\lib\lib-ansi-x86-debug&quot;"
 				IgnoreAllDefaultLibraries="true"
-				SubSystem="2"
+				SubSystem="1"
 				RandomizedBaseAddress="2"
 				DataExecutionPrevention="2"
 			/>
@@ -99,7 +99,6 @@
 			InheritedPropertySheets=".\pyproject.VS2008.vsprops;.\x64.VS2008.vsprops;.\debug.VS2008.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
-			CharacterSet="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -122,7 +121,7 @@
 				Optimization="0"
 				EnableIntrinsicFunctions="false"
 				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\cpython\Include&quot;;&quot;$(ProjectDir)..\..\cpython\PC&quot;"
-				PreprocessorDefinitions="_WINDOWS"
+				PreprocessorDefinitions="_CONSOLE;VENV_REDIRECT"
 				RuntimeLibrary="1"
 				ProgramDataBaseFileName="$(IntDir)\$(TargetName).pdb"
 			/>
@@ -140,10 +139,10 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="libcmtd.lib oldnames.lib c99compatd_vs2008.lib version.lib"
-				OutputFile="$(OutDir)\pyw_d.exe"
+				OutputFile="$(OutDir)\venvlauncher_d.exe"
 				AdditionalLibraryDirectories="&quot;$(c99compatDir)\lib\lib-ansi-x64-debug&quot;"
 				IgnoreAllDefaultLibraries="true"
-				SubSystem="2"
+				SubSystem="1"
 				RandomizedBaseAddress="2"
 				DataExecutionPrevention="2"
 			/>
@@ -176,7 +175,6 @@
 			InheritedPropertySheets=".\pyproject.VS2008.vsprops;.\release.VS2008.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
-			CharacterSet="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -196,7 +194,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\cpython\Include&quot;;&quot;$(ProjectDir)..\..\cpython\PC&quot;"
-				PreprocessorDefinitions="_WINDOWS"
+				PreprocessorDefinitions="_CONSOLE;VENV_REDIRECT"
 				StringPooling="true"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
@@ -216,10 +214,10 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="libcmt.lib oldnames.lib c99compat_vs2008.lib version.lib"
-				OutputFile="$(OutDir)\pyw.exe"
+				OutputFile="$(OutDir)\venvlauncher.exe"
 				AdditionalLibraryDirectories="&quot;$(c99compatDir)\lib\lib-ansi-x86-release&quot;"
 				IgnoreAllDefaultLibraries="true"
-				SubSystem="2"
+				SubSystem="1"
 				RandomizedBaseAddress="2"
 				DataExecutionPrevention="2"
 			/>
@@ -252,7 +250,6 @@
 			InheritedPropertySheets=".\pyproject.VS2008.vsprops;.\x64.VS2008.vsprops;.\release.VS2008.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
-			CharacterSet="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -273,7 +270,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\cpython\Include&quot;;&quot;$(ProjectDir)..\..\cpython\PC&quot;"
-				PreprocessorDefinitions="_WINDOWS"
+				PreprocessorDefinitions="_CONSOLE;VENV_REDIRECT"
 				StringPooling="true"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
@@ -293,10 +290,10 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="libcmt.lib oldnames.lib c99compat_vs2008.lib version.lib"
-				OutputFile="$(OutDir)\pyw.exe"
+				OutputFile="$(OutDir)\venvlauncher.exe"
 				AdditionalLibraryDirectories="&quot;$(c99compatDir)\lib\lib-ansi-x64-release&quot;"
 				IgnoreAllDefaultLibraries="true"
-				SubSystem="2"
+				SubSystem="1"
 				RandomizedBaseAddress="2"
 				DataExecutionPrevention="2"
 			/>
@@ -329,7 +326,6 @@
 			InheritedPropertySheets=".\pyproject.VS2008.vsprops;.\release.VS2008.vsprops;.\pginstrument.VS2008.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
-			CharacterSet="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -349,7 +345,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\cpython\Include&quot;;&quot;$(ProjectDir)..\..\cpython\PC&quot;"
-				PreprocessorDefinitions="_WINDOWS"
+				PreprocessorDefinitions="_CONSOLE;VENV_REDIRECT"
 				StringPooling="true"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
@@ -369,8 +365,8 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="version.lib"
-				OutputFile="$(OutDir)\pyw.exe"
-				SubSystem="2"
+				OutputFile="$(OutDir)\venvlauncher.exe"
+				SubSystem="1"
 				RandomizedBaseAddress="2"
 				DataExecutionPrevention="2"
 				ImportLibrary=""
@@ -404,7 +400,6 @@
 			InheritedPropertySheets=".\pyproject.VS2008.vsprops;.\x64.VS2008.vsprops;.\release.VS2008.vsprops;.\pginstrument.VS2008.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
-			CharacterSet="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -425,7 +420,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\cpython\Include&quot;;&quot;$(ProjectDir)..\..\cpython\PC&quot;"
-				PreprocessorDefinitions="_WINDOWS"
+				PreprocessorDefinitions="_CONSOLE;VENV_REDIRECT"
 				StringPooling="true"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
@@ -445,8 +440,8 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="version.lib"
-				OutputFile="$(OutDir)\pyw.exe"
-				SubSystem="2"
+				OutputFile="$(OutDir)\venvlauncher.exe"
+				SubSystem="1"
 				RandomizedBaseAddress="2"
 				DataExecutionPrevention="2"
 				ImportLibrary=""
@@ -481,7 +476,6 @@
 			InheritedPropertySheets=".\pyproject.VS2008.vsprops;.\release.VS2008.vsprops;.\pgupdate.VS2008.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
-			CharacterSet="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -501,7 +495,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\cpython\Include&quot;;&quot;$(ProjectDir)..\..\cpython\PC&quot;"
-				PreprocessorDefinitions="_WINDOWS"
+				PreprocessorDefinitions="_CONSOLE;VENV_REDIRECT"
 				StringPooling="true"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
@@ -521,8 +515,8 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="version.lib"
-				OutputFile="$(OutDir)\pyw.exe"
-				SubSystem="2"
+				OutputFile="$(OutDir)\venvlauncher.exe"
+				SubSystem="1"
 				RandomizedBaseAddress="2"
 				DataExecutionPrevention="2"
 				ImportLibrary=""
@@ -556,7 +550,6 @@
 			InheritedPropertySheets=".\pyproject.VS2008.vsprops;.\x64.VS2008.vsprops;.\release.VS2008.vsprops;.\pgupdate.VS2008.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
-			CharacterSet="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -577,7 +570,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\cpython\Include&quot;;&quot;$(ProjectDir)..\..\cpython\PC&quot;"
-				PreprocessorDefinitions="_WINDOWS"
+				PreprocessorDefinitions="_CONSOLE;VENV_REDIRECT"
 				StringPooling="true"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
@@ -597,8 +590,8 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="version.lib"
-				OutputFile="$(OutDir)\pyw.exe"
-				SubSystem="2"
+				OutputFile="$(OutDir)\venvlauncher.exe"
+				SubSystem="1"
 				RandomizedBaseAddress="2"
 				DataExecutionPrevention="2"
 				ImportLibrary=""

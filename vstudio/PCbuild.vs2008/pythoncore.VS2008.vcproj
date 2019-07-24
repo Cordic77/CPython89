@@ -1835,7 +1835,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Objects\odictobject.c"
+				RelativePath="..\Objects\odictobject.c"
 				>
 			</File>
 			<File
@@ -1843,7 +1843,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Objects\setobject.c"
+				RelativePath="..\Objects\setobject.c"
 				>
 			</File>
 			<File
@@ -1999,7 +1999,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\PC\winreg.c"
+				RelativePath="..\PC\winreg.c"
 				>
 			</File>
 			<File
