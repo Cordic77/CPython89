@@ -704,7 +704,7 @@
 			Name="Source Files"
 			>
 			<File
-				RelativePath="..\..\cpython\PC\launcher.c"
+				RelativePath="..\PC\launcher.c"
 				>
 			</File>
 		</Filter>

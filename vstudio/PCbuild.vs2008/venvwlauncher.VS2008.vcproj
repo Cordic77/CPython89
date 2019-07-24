@@ -2,8 +2,8 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9,00"
-	Name="pywlauncher"
-	ProjectGUID="{1D4B18D3-7C12-4ECB-9179-8531FF876CE6}"
+	Name="venvwlauncher"
+	ProjectGUID="{FDB84CBB-2FB6-47C8-A2D6-091E0833239D}"
 	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
@@ -45,7 +45,7 @@
 				Optimization="0"
 				EnableIntrinsicFunctions="false"
 				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\cpython\Include&quot;;&quot;$(ProjectDir)..\..\cpython\PC&quot;"
-				PreprocessorDefinitions="_WINDOWS"
+				PreprocessorDefinitions="_WINDOWS;VENV_REDIRECT"
 				RuntimeLibrary="1"
 				ProgramDataBaseFileName="$(IntDir)\$(TargetName).pdb"
 			/>
@@ -122,7 +122,7 @@
 				Optimization="0"
 				EnableIntrinsicFunctions="false"
 				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\cpython\Include&quot;;&quot;$(ProjectDir)..\..\cpython\PC&quot;"
-				PreprocessorDefinitions="_WINDOWS"
+				PreprocessorDefinitions="_WINDOWS;VENV_REDIRECT"
 				RuntimeLibrary="1"
 				ProgramDataBaseFileName="$(IntDir)\$(TargetName).pdb"
 			/>
@@ -196,7 +196,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\cpython\Include&quot;;&quot;$(ProjectDir)..\..\cpython\PC&quot;"
-				PreprocessorDefinitions="_WINDOWS"
+				PreprocessorDefinitions="_WINDOWS;VENV_REDIRECT"
 				StringPooling="true"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
@@ -273,7 +273,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\cpython\Include&quot;;&quot;$(ProjectDir)..\..\cpython\PC&quot;"
-				PreprocessorDefinitions="_WINDOWS"
+				PreprocessorDefinitions="_WINDOWS;VENV_REDIRECT"
 				StringPooling="true"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
@@ -349,7 +349,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\cpython\Include&quot;;&quot;$(ProjectDir)..\..\cpython\PC&quot;"
-				PreprocessorDefinitions="_WINDOWS"
+				PreprocessorDefinitions="_WINDOWS;VENV_REDIRECT"
 				StringPooling="true"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
@@ -425,7 +425,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\cpython\Include&quot;;&quot;$(ProjectDir)..\..\cpython\PC&quot;"
-				PreprocessorDefinitions="_WINDOWS"
+				PreprocessorDefinitions="_WINDOWS;VENV_REDIRECT"
 				StringPooling="true"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
@@ -501,7 +501,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\cpython\Include&quot;;&quot;$(ProjectDir)..\..\cpython\PC&quot;"
-				PreprocessorDefinitions="_WINDOWS"
+				PreprocessorDefinitions="_WINDOWS;VENV_REDIRECT"
 				StringPooling="true"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
@@ -577,7 +577,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\cpython\Include&quot;;&quot;$(ProjectDir)..\..\cpython\PC&quot;"
-				PreprocessorDefinitions="_WINDOWS"
+				PreprocessorDefinitions="_WINDOWS;VENV_REDIRECT"
 				StringPooling="true"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"

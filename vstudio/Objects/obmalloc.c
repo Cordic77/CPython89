@@ -29,19 +29,36 @@ static void _PyMem_DebugCheckAddress(char api_id, const void *p);
 static void _PyMem_SetupDebugHooksDomain(PyMemAllocatorDomain domain);
 
 #if defined(__has_feature)  /* Clang */
- #if __has_feature(address_sanitizer)  /* is ASAN enabled? */
-  #define ATTRIBUTE_NO_ADDRESS_SAFETY_ANALYSIS \
+#  if __has_feature(address_sanitizer) /* is ASAN enabled? */
+#    define _Py_NO_ADDRESS_SAFETY_ANALYSIS \
         __attribute__((no_address_safety_analysis))
- #else
-  #define ATTRIBUTE_NO_ADDRESS_SAFETY_ANALYSIS
- #endif
-#else
- #if defined(__SANITIZE_ADDRESS__)  /* GCC 4.8.x, is ASAN enabled? */
-  #define ATTRIBUTE_NO_ADDRESS_SAFETY_ANALYSIS \
+#  endif
+#  if __has_feature(thread_sanitizer)  /* is TSAN enabled? */
+#    define _Py_NO_SANITIZE_THREAD __attribute__((no_sanitize_thread))
+#  endif
+#  if __has_feature(memory_sanitizer)  /* is MSAN enabled? */
+#    define _Py_NO_SANITIZE_MEMORY __attribute__((no_sanitize_memory))
+#  endif
+#elif defined(__GNUC__)
+#  if defined(__SANITIZE_ADDRESS__)    /* GCC 4.8+, is ASAN enabled? */
+#    define _Py_NO_ADDRESS_SAFETY_ANALYSIS \
         __attribute__((no_address_safety_analysis))
- #else
-  #define ATTRIBUTE_NO_ADDRESS_SAFETY_ANALYSIS
- #endif
+#  endif
+   // TSAN is supported since GCC 4.8, but __SANITIZE_THREAD__ macro
+   // is provided only since GCC 7.
+#  if __GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 8)
+#    define _Py_NO_SANITIZE_THREAD __attribute__((no_sanitize_thread))
+#  endif
+#endif
+
+#ifndef _Py_NO_ADDRESS_SAFETY_ANALYSIS
+#  define _Py_NO_ADDRESS_SAFETY_ANALYSIS
+#endif
+#ifndef _Py_NO_SANITIZE_THREAD
+#  define _Py_NO_SANITIZE_THREAD
+#endif
+#ifndef _Py_NO_SANITIZE_MEMORY
+#  define _Py_NO_SANITIZE_MEMORY
 #endif
 
 #ifdef WITH_PYMALLOC
@@ -1344,7 +1361,9 @@ obmalloc controls.  Since this test is needed at every entry point, it's
 extremely desirable that it be this fast.
 */
 
-static bool ATTRIBUTE_NO_ADDRESS_SAFETY_ANALYSIS
+static bool _Py_NO_ADDRESS_SAFETY_ANALYSIS
+            _Py_NO_SANITIZE_THREAD
+            _Py_NO_SANITIZE_MEMORY
 address_in_range(void *p, poolp pool)
 {
     // Since address_in_range may be reading from memory which was not allocated
@@ -1662,7 +1681,7 @@ pymalloc_free(void *ctx, void *p)
         goto success;
     }
 
-  { struct arena_object* ao;  /*C89 -- mixed declarations and code*/
+  { struct arena_object* ao;
     uint nf;  /* ao->nfreepools */
 
     /* freeblock wasn't NULL, so the pool wasn't full,
@@ -2091,6 +2110,23 @@ _PyMem_DebugRawCalloc(void *ctx, size_t nelem, size_t elsize)
 }
 
 
+/* Heuristic checking if the memory has been freed. Rely on the debug hooks on
+   Python memory allocators which fills the memory with DEADBYTE (0xDB) when
+   memory is deallocated. */
+int
+_PyMem_IsFreed(void *ptr, size_t size)
+{
+    unsigned char *bytes = ptr;
+	size_t i;
+    for (/*size_t*/ i=0; i < size; i++) {  /*C89 -- mixed declarations and code*/
+        if (bytes[i] != DEADBYTE) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+
 /* The debug free first checks the 2*SST bytes on each end for sanity (in
    particular, that the FORBIDDENBYTEs with the api ID are still intact).
    Then fills the original bytes with DEADBYTE.
@@ -2124,7 +2160,7 @@ _PyMem_DebugRawRealloc(void *ctx, void *p, size_t nbytes)
         return _PyMem_DebugRawAlloc(0, ctx, nbytes);
     }
 
-  { debug_alloc_api_t *api = (debug_alloc_api_t *)ctx;  /*C89 -- mixed declarations and code*/
+  { debug_alloc_api_t *api = (debug_alloc_api_t *)ctx;
     uint8_t *head;        /* base address of malloc'ed pad block */
     uint8_t *data;        /* pointer to data bytes */
     uint8_t *r;

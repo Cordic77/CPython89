@@ -80,8 +80,8 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				Description="Copying tcl86tg.dll and tk86tg.dll"
-				CommandLine="copy /y &quot;$(tcltkDir)\bin\tcl86tg.dll&quot; &quot;$(OutDir)&quot;&#x0D;&#x0A;copy /y &quot;$(tcltkDir)\bin\tk86tg.dll&quot; &quot;$(OutDir)&quot;"
+				Description="Copying tcl86t.dll and tk86t.dll"
+				CommandLine="copy /y &quot;$(tcltkDir)\bin\tcl86t.dll&quot; &quot;$(OutDir)&quot;&#x0D;&#x0A;copy /y &quot;$(tcltkDir)\bin\tk86t.dll&quot; &quot;$(OutDir)&quot;&#x0D;&#x0A;echo $(tcltkDir)\lib\tcl8.6 > &quot;$(OutDir)\TCL_LIBRARY.env&quot;"
 			/>
 		</Configuration>
 		<Configuration
@@ -146,8 +146,8 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				Description="Copying tcl86tg.dll and tk86tg.dll"
-				CommandLine="copy /y &quot;$(tcltk64Dir)\bin\tcl86tg.dll&quot; &quot;$(OutDir)&quot;&#x0D;&#x0A;copy /y &quot;$(tcltk64Dir)\bin\tk86tg.dll&quot; &quot;$(OutDir)&quot;"
+				Description="Copying tcl86t.dll and tk86t.dll"
+				CommandLine="copy /y &quot;$(tcltk64Dir)\bin\tcl86t.dll&quot; &quot;$(OutDir)&quot;&#x0D;&#x0A;copy /y &quot;$(tcltk64Dir)\bin\tk86t.dll&quot; &quot;$(OutDir)&quot;&#x0D;&#x0A;echo $(tcltkDir)\lib\tcl8.6 > &quot;$(OutDir)\TCL_LIBRARY.env&quot;"
 			/>
 		</Configuration>
 		<Configuration
@@ -213,7 +213,7 @@
 			<Tool
 				Name="VCPostBuildEventTool"
 				Description="Copying tcl86t.dll and tk86t.dll"
-				CommandLine="copy /y &quot;$(tcltkDir)\bin\tcl86t.dll&quot; &quot;$(OutDir)&quot;&#x0D;&#x0A;copy /y &quot;$(tcltkDir)\bin\tk86t.dll&quot; &quot;$(OutDir)&quot;"
+				CommandLine="copy /y &quot;$(tcltkDir)\bin\tcl86t.dll&quot; &quot;$(OutDir)&quot;&#x0D;&#x0A;copy /y &quot;$(tcltkDir)\bin\tk86t.dll&quot; &quot;$(OutDir)&quot;&#x0D;&#x0A;echo $(tcltkDir)\lib\tcl8.6 > &quot;$(OutDir)\TCL_LIBRARY.env&quot;"
 			/>
 		</Configuration>
 		<Configuration
@@ -280,7 +280,7 @@
 			<Tool
 				Name="VCPostBuildEventTool"
 				Description="Copying tcl86t.dll and tk86t.dll"
-				CommandLine="copy /y &quot;$(tcltk64Dir)\bin\tcl86t.dll&quot; &quot;$(OutDir)&quot;&#x0D;&#x0A;copy /y &quot;$(tcltk64Dir)\bin\tk86t.dll&quot; &quot;$(OutDir)&quot;"
+				CommandLine="copy /y &quot;$(tcltk64Dir)\bin\tcl86t.dll&quot; &quot;$(OutDir)&quot;&#x0D;&#x0A;copy /y &quot;$(tcltk64Dir)\bin\tk86t.dll&quot; &quot;$(OutDir)&quot;&#x0D;&#x0A;echo $(tcltkDir)\lib\tcl8.6 > &quot;$(OutDir)\TCL_LIBRARY.env&quot;"
 			/>
 		</Configuration>
 		<Configuration

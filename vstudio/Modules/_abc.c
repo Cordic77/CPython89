@@ -270,7 +270,7 @@ _abc__get_dump(PyObject *module, PyObject *self)
                                   PySet_New(impl->_abc_registry),
                                   PySet_New(impl->_abc_cache),
                                   PySet_New(impl->_abc_negative_cache),
-                                  impl->_abc_negative_cache_version);
+                                  impl->_abc_negative_cache_version);  /*C89 -- mixed declarations and code*/
     Py_DECREF(impl);
     return res;
   }
@@ -764,7 +764,11 @@ subclasscheck_check_registry(_abc_data *impl, PyObject *subclass,
     // Weakref callback may remove entry from set.
     // So we take snapshot of registry first.
   { PyObject **copy = PyMem_Malloc(sizeof(PyObject*) * registry_size);
-    PyObject *key;
+    if (copy == NULL) {
+        PyErr_NoMemory();
+        return -1;
+    }
+  { PyObject *key;
     Py_ssize_t pos = 0;
     Py_hash_t hash;
     Py_ssize_t i = 0;
@@ -808,7 +812,7 @@ subclasscheck_check_registry(_abc_data *impl, PyObject *subclass,
         Py_DECREF(copy[i]);
     }
     PyMem_Free(copy);
-  }}
+  }}}
     return ret;
 }
 

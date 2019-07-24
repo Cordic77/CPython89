@@ -595,7 +595,7 @@
 			Name="Source Files"
 			>
 			<File
-				RelativePath="..\..\cpython\Modules\_elementtree.c"
+				RelativePath="..\Modules\_elementtree.c"
 				>
 			</File>
 			<File
