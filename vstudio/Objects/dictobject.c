@@ -235,6 +235,8 @@ static Py_ssize_t lookdict_split(PyDictObject *mp, PyObject *key,
 
 static int dictresize(PyDictObject *mp, Py_ssize_t minused);
 
+static PyObject* dict_iter(PyDictObject *dict);
+
 /*Global counter used to set ma_version_tag field of dictionary.
  * It is incremented each time that a dictionary is created and each
  * time that a dictionary is modified. */
@@ -657,6 +659,13 @@ clone_combined_dict(PyDictObject *orig)
         /* Maintain tracking. */
         _PyObject_GC_TRACK(new);
     }
+
+    /* Since we copied the keys table we now have an extra reference
+       in the system.  Manually call _Py_INC_REFTOTAL to signal that
+       we have it now; calling DK_INCREF would be an error as
+       keys->dk_refcnt is already set to 1 (after memcpy). */
+    _Py_INC_REFTOTAL;
+
     return (PyObject *)new;
   }}}
 }
@@ -843,7 +852,7 @@ lookdict_unicode_nodummy(PyDictObject *mp, PyObject *key,
             *value_addr = NULL;
             return DKIX_EMPTY;
         }
-      { PyDictKeyEntry *ep = &ep0[ix];
+      { PyDictKeyEntry *ep = &ep0[ix];  /*C89 -- mixed declarations and code*/
         assert(ep->me_key != NULL);
         assert(PyUnicode_CheckExact(ep->me_key));
         if (ep->me_key == key ||
@@ -2391,7 +2400,7 @@ dict_merge(PyObject *a, PyObject *b, int override)
         return -1;
     }
     mp = (PyDictObject*)a;
-    if (PyDict_Check(b)) {
+    if (PyDict_Check(b) && (Py_TYPE(b)->tp_iter == (getiterfunc)dict_iter)) {
         other = (PyDictObject*)b;
         if (other == mp || other->ma_used == 0)
             /* a.update(a) or a.update({}); nothing to do */

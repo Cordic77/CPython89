@@ -6816,8 +6816,6 @@ unicode_encode_ucs1(PyObject *unicode,
                     str = _PyBytesWriter_WriteBytes(&writer, str,
                                                     PyBytes_AS_STRING(rep),
                                                     PyBytes_GET_SIZE(rep));
-                    if (str == NULL)
-                        goto onError;
                 }
                 else {
                     assert(PyUnicode_Check(rep));
@@ -6839,6 +6837,9 @@ unicode_encode_ucs1(PyObject *unicode,
                                                     PyUnicode_DATA(rep),
                                                     PyUnicode_GET_LENGTH(rep));
                 }
+                if (str == NULL)
+                    goto onError;
+
                 pos = newpos;
                 Py_CLEAR(rep);
             }
@@ -9080,6 +9081,7 @@ _PyUnicode_TransformDecimalAndSpaceToASCII(PyObject *unicode)
             int decimal = Py_UNICODE_TODECIMAL(ch);
             if (decimal < 0) {
                 out[i] = '?';
+                out[i+1] = '\0';
                 _PyUnicode_LENGTH(result) = i + 1;
                 break;
             }

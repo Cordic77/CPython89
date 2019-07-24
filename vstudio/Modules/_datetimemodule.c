@@ -1294,8 +1294,11 @@ tzinfo_from_isoformat_results(int rv, int tzoffset, int tz_useconds) {
         }
 
       { PyObject *delta = new_delta(0, tzoffset, tz_useconds, 1);  /*C89 -- mixed declarations and code*/
+        if (delta == NULL) {
+            return NULL;
+        }
         tzinfo = new_timezone(delta, NULL);
-        Py_XDECREF(delta);
+        Py_DECREF(delta);
       }
     } else {
         tzinfo = Py_None;
@@ -2890,8 +2893,11 @@ date_fromisoformat(PyObject *cls, PyObject *dtstr) {
   { Py_ssize_t len;  /*C89 -- mixed declarations and code*/
 
     const char * dt_ptr = PyUnicode_AsUTF8AndSize(dtstr, &len);
+    if (dt_ptr == NULL) {
+        goto invalid_string_error;
+    }
 
-    int year = 0, month = 0, day = 0;
+  { int year = 0, month = 0, day = 0;
 
     int rv;
     if (len == 10) {
@@ -2901,13 +2907,16 @@ date_fromisoformat(PyObject *cls, PyObject *dtstr) {
     }
 
     if (rv < 0) {
-        PyErr_Format(PyExc_ValueError, "Invalid isoformat string: %s",
-                     dt_ptr);
-        return NULL;
+        goto invalid_string_error;
     }
 
     return new_date_subclass_ex(year, month, day, cls);
-  }
+  }}
+
+invalid_string_error:
+    PyErr_Format(PyExc_ValueError, "Invalid isoformat string: %R",
+                 dtstr);
+    return NULL;
 }
 
 
@@ -4266,15 +4275,18 @@ time_fromisoformat(PyObject *cls, PyObject *tstr) {
   { Py_ssize_t len;  /*C89 -- mixed declarations and code*/
     const char *p = PyUnicode_AsUTF8AndSize(tstr, &len);
 
-    int hour = 0, minute = 0, second = 0, microsecond = 0;
+    if (p == NULL) {
+        goto invalid_string_error;
+    }
+
+  { int hour = 0, minute = 0, second = 0, microsecond = 0;
     int tzoffset, tzimicrosecond = 0;
     int rv = parse_isoformat_time(p, len,
                                   &hour, &minute, &second, &microsecond,
                                   &tzoffset, &tzimicrosecond);
 
     if (rv < 0) {
-        PyErr_Format(PyExc_ValueError, "Invalid isoformat string: %s", p);
-        return NULL;
+        goto invalid_string_error;
     }
 
   { PyObject *tzinfo = tzinfo_from_isoformat_results(rv, tzoffset,
@@ -4294,7 +4306,11 @@ time_fromisoformat(PyObject *cls, PyObject *tstr) {
 
     Py_DECREF(tzinfo);
     return t;
-  }}}
+  }}}}
+
+invalid_string_error:
+    PyErr_Format(PyExc_ValueError, "Invalid isoformat string: %R", tstr);
+    return NULL;
 }
 
 
@@ -4634,7 +4650,22 @@ datetime_from_timet_and_us(PyObject *cls, TM_FUNC f, time_t timet, int us,
     second = Py_MIN(59, tm.tm_sec);
 
     /* local timezone requires to compute fold */
-    if (tzinfo == Py_None && f == _PyTime_localtime) {
+    if (tzinfo == Py_None && f == _PyTime_localtime
+    /* On Windows, passing a negative value to local results
+     * in an OSError because localtime_s on Windows does
+     * not support negative timestamps. Unfortunately this
+     * means that fold detection for time values between
+     * 0 and max_fold_seconds will result in an identical
+     * error since we subtract max_fold_seconds to detect a
+     * fold. However, since we know there haven't been any
+     * folds in the interval [0, max_fold_seconds) in any
+     * timezone, we can hackily just forego fold detection
+     * for this time range.
+     */
+#ifdef MS_WINDOWS
+        && (timet - max_fold_seconds > 0)
+#endif
+        ) {
         long long probe_seconds, result_seconds, transition;
 
         result_seconds = utc_to_seconds(year, month, day,
@@ -4834,6 +4865,34 @@ datetime_combine(PyObject *cls, PyObject *args, PyObject *kw)
 }
 
 static PyObject *
+_sanitize_isoformat_str(PyObject *dtstr, int *needs_decref) {
+    // `fromisoformat` allows surrogate characters in exactly one position,
+    // the separator; to allow datetime_fromisoformat to make the simplifying
+    // assumption that all valid strings can be encoded in UTF-8, this function
+    // replaces any surrogate character separators with `T`.
+    Py_ssize_t len = PyUnicode_GetLength(dtstr);
+    *needs_decref = 0;
+    if (len <= 10 || !Py_UNICODE_IS_SURROGATE(PyUnicode_READ_CHAR(dtstr, 10))) {
+        return dtstr;
+    }
+
+  { PyObject *str_out = PyUnicode_New(len, PyUnicode_MAX_CHAR_VALUE(dtstr));  /*C89 -- mixed declarations and code*/
+    if (str_out == NULL) {
+        return NULL;
+    }
+
+    if (PyUnicode_CopyCharacters(str_out, 0, dtstr, 0, len) == -1 ||
+            PyUnicode_WriteChar(str_out, 10, (Py_UCS4)'T')) {
+        Py_DECREF(str_out);
+        return NULL;
+    }
+
+    *needs_decref = 1;
+    return str_out;
+  }
+}
+
+static PyObject *
 datetime_fromisoformat(PyObject* cls, PyObject *dtstr) {
     assert(dtstr != NULL);
 
@@ -4842,9 +4901,20 @@ datetime_fromisoformat(PyObject* cls, PyObject *dtstr) {
         return NULL;
     }
 
-  { Py_ssize_t len;  /*C89 -- mixed declarations and code*/
+  { int needs_decref = 0;  /*C89 -- mixed declarations and code*/
+    dtstr = _sanitize_isoformat_str(dtstr, &needs_decref);
+    if (dtstr == NULL) {
+        goto error;
+    }
+
+  { Py_ssize_t len;
     const char * dt_ptr = PyUnicode_AsUTF8AndSize(dtstr, &len);
-    const char * p = dt_ptr;
+
+    if (dt_ptr == NULL) {
+        goto invalid_string_error;
+    }
+
+  { const char *p = dt_ptr;
 
     int year = 0, month = 0, day = 0;
     int hour = 0, minute = 0, second = 0, microsecond = 0;
@@ -4877,21 +4947,34 @@ datetime_fromisoformat(PyObject* cls, PyObject *dtstr) {
                                   &tzoffset, &tzusec);
     }
     if (rv < 0) {
-        PyErr_Format(PyExc_ValueError, "Invalid isoformat string: %s", dt_ptr);
-        return NULL;
+        goto invalid_string_error;
     }
 
   { PyObject* tzinfo = tzinfo_from_isoformat_results(rv, tzoffset, tzusec);
     if (tzinfo == NULL) {
-        return NULL;
+        goto error;
     }
 
   { PyObject *dt = new_datetime_subclass_ex(year, month, day, hour, minute,
                                             second, microsecond, tzinfo, cls);
 
     Py_DECREF(tzinfo);
+    if (needs_decref) {
+        Py_DECREF(dtstr);
+    }
     return dt;
-  }}}
+  }}}}
+
+invalid_string_error:
+    PyErr_Format(PyExc_ValueError, "Invalid isoformat string: %R", dtstr);
+
+error:
+    if (needs_decref) {
+        Py_DECREF(dtstr);
+    }
+  }
+
+    return NULL;
 }
 
 

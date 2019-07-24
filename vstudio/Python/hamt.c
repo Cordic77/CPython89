@@ -418,7 +418,7 @@ hamt_hash(PyObject *o)
     */
   { int32_t xored = (int32_t)(hash & 0xffffffffl) ^ (int32_t)(hash >> 32);  /*C89 -- mixed declarations and code*/
     return xored == -1 ? -2 : xored;
-    }
+  }
 #endif
 }
 
@@ -2220,7 +2220,7 @@ hamt_iterator_bitmap_next(PyHamtIteratorState *iter,
     if (node->b_array[pos] == NULL) {
         iter->i_pos[level] = pos + 2;
 
-      { int8_t next_level = level + 1;
+      { int8_t next_level = level + 1;  /*C89 -- mixed declarations and code*/
         assert(next_level < _Py_HAMT_MAX_TREE_DEPTH);
         iter->i_level = next_level;
         iter->i_pos[next_level] = 0;
@@ -2314,7 +2314,7 @@ hamt_iterator_next(PyHamtIteratorState *iter, PyObject **key, PyObject **val)
 
     assert(iter->i_level < _Py_HAMT_MAX_TREE_DEPTH);
 
-  { PyHamtNode *current = iter->i_nodes[iter->i_level];
+  { PyHamtNode *current = iter->i_nodes[iter->i_level];  /*C89 -- mixed declarations and code*/
 
     if (IS_BITMAP_NODE(current)) {
         return hamt_iterator_bitmap_next(iter, key, val);
@@ -3064,7 +3064,6 @@ static inline void init_PyHamt_Type (void)
 }
 #endif
 
-
 /////////////////////////////////// Tree Node Types
 
 
@@ -3172,7 +3171,6 @@ static inline void init_PyHamt_CollisionNode_Type (void)
   }
 }
 #endif
-
 
 int
 _PyHamt_Init(void)

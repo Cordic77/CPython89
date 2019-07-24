@@ -2432,7 +2432,8 @@ static int _pending_callback(void *arg)
 /* The following requests n callbacks to _pending_callback.  It can be
  * run from any python thread.
  */
-PyObject *pending_threadfunc(PyObject *self, PyObject *arg)
+static PyObject *
+pending_threadfunc(PyObject *self, PyObject *arg)
 {
     PyObject *callable;
     int r;
@@ -5204,7 +5205,7 @@ static PyMethodDef generic_alias_methods[] = {
 };
 
 #if !defined(ISO_C99) || (ISO_C99 == 1)  /*C89 -- designated initializers aren't supported*/
-PyTypeObject GenericAlias_Type = {
+static PyTypeObject GenericAlias_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
     "GenericAlias",
     sizeof(PyGenericAliasObject),
@@ -5214,7 +5215,7 @@ PyTypeObject GenericAlias_Type = {
     .tp_methods = generic_alias_methods,
 };
 #else
-PyTypeObject GenericAlias_Type = {
+static PyTypeObject GenericAlias_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
     "GenericAlias",
     sizeof(PyGenericAliasObject),
@@ -5260,7 +5261,7 @@ static PyMethodDef generic_methods[] = {
 };
 
 #if !defined(ISO_C99) || (ISO_C99 == 1)  /*C89 -- designated initializers aren't supported*/
-PyTypeObject Generic_Type = {
+static PyTypeObject Generic_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
     "Generic",
     sizeof(PyGenericObject),
@@ -5269,7 +5270,7 @@ PyTypeObject Generic_Type = {
     .tp_methods = generic_methods,
 };
 #else
-PyTypeObject Generic_Type = {
+static PyTypeObject Generic_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
     "Generic",
     sizeof(PyGenericObject),

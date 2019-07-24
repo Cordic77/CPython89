@@ -559,7 +559,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\Modules\expat\xmltok.c"
+				RelativePath="..\..\cpython\Modules\expat\xmltok.c"
 				>
 			</File>
 		</Filter>

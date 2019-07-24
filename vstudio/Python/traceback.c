@@ -513,18 +513,24 @@ tb_displayline(PyObject *f, PyObject *filename, int lineno, PyObject *name)
     return err;
 }
 
+static const int TB_RECURSIVE_CUTOFF = 3; // Also hardcoded in traceback.py.
+
 static int
 tb_print_line_repeated(PyObject *f, long cnt)
 {
-    int err;
-    PyObject *line = PyUnicode_FromFormat(
-            "  [Previous line repeated %ld more times]\n", cnt-3);
+    cnt -= TB_RECURSIVE_CUTOFF;
+  { PyObject *line = PyUnicode_FromFormat(
+        (cnt > 1)
+          ? "  [Previous line repeated %ld more times]\n"
+          : "  [Previous line repeated %ld more time]\n",
+        cnt);  /*C89 -- mixed declarations and code*/
     if (line == NULL) {
         return -1;
     }
-    err = PyFile_WriteObject(line, f, Py_PRINT_RAW);
+  { int err = PyFile_WriteObject(line, f, Py_PRINT_RAW);
     Py_DECREF(line);
     return err;
+  }}
 }
 
 static int
@@ -546,15 +552,11 @@ tb_printinternal(PyTracebackObject *tb, PyObject *f, long limit)
         tb = tb->tb_next;
     }
     while (tb != NULL && err == 0) {
-        if (last_file != NULL &&
-            tb->tb_frame->f_code->co_filename == last_file &&
-            last_line != -1 && tb->tb_lineno == last_line &&
-            last_name != NULL && tb->tb_frame->f_code->co_name == last_name)
-        {
-            cnt++;
-        }
-        else {
-            if (cnt > 3) {
+        if (last_file == NULL ||
+            tb->tb_frame->f_code->co_filename != last_file ||
+            last_line == -1 || tb->tb_lineno != last_line ||
+            last_name == NULL || tb->tb_frame->f_code->co_name != last_name) {
+            if (cnt > TB_RECURSIVE_CUTOFF) {
                 err = tb_print_line_repeated(f, cnt);
             }
             last_file = tb->tb_frame->f_code->co_filename;
@@ -562,7 +564,8 @@ tb_printinternal(PyTracebackObject *tb, PyObject *f, long limit)
             last_name = tb->tb_frame->f_code->co_name;
             cnt = 0;
         }
-        if (err == 0 && cnt < 3) {
+        cnt++;
+        if (err == 0 && cnt <= TB_RECURSIVE_CUTOFF) {
             err = tb_displayline(f,
                                  tb->tb_frame->f_code->co_filename,
                                  tb->tb_lineno,
@@ -573,7 +576,7 @@ tb_printinternal(PyTracebackObject *tb, PyObject *f, long limit)
         }
         tb = tb->tb_next;
     }
-    if (err == 0 && cnt > 3) {
+    if (err == 0 && cnt > TB_RECURSIVE_CUTOFF) {
         err = tb_print_line_repeated(f, cnt);
     }
     return err;

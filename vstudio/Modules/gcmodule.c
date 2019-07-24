@@ -1431,7 +1431,7 @@ gc_freeze_impl(PyObject *module)
 /*[clinic end generated code: output=502159d9cdc4c139 input=b602b16ac5febbe5]*/
 {
   { int i;
-    for (/*int*/ i = 0; i < NUM_GENERATIONS; ++i) {
+    for (/*int*/ i = 0; i < NUM_GENERATIONS; ++i) {  /*C89 -- mixed declarations and code*/
         gc_list_merge(GEN_HEAD(i), &_PyRuntime.gc.permanent_generation.head);
         _PyRuntime.gc.generations[i].count = 0;
     }

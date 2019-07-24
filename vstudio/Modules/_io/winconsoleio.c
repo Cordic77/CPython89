@@ -560,7 +560,8 @@ read_console_w(HANDLE handle, DWORD maxlen, DWORD *readlen) {
     Py_BEGIN_ALLOW_THREADS
   { DWORD off = 0;  /*C89 -- mixed declarations and code*/
     while (off < maxlen) {
-        DWORD n, len = min(maxlen - off, BUFSIZ);
+        DWORD n = (DWORD)-1; 
+        DWORD len = min(maxlen - off, BUFSIZ);
         SetLastError(0);
       { BOOL res = ReadConsoleW(handle, &buf[off], len, &n, NULL);
 
@@ -569,6 +570,9 @@ read_console_w(HANDLE handle, DWORD maxlen, DWORD *readlen) {
             break;
         }
       }
+        if (n == (DWORD)-1 && (err = GetLastError()) == ERROR_OPERATION_ABORTED) {
+            break;
+        }
         if (n == 0) {
             err = GetLastError();
             if (err != ERROR_OPERATION_ABORTED)

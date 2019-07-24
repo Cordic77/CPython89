@@ -42,7 +42,8 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="_CONSOLE"
+				PreprocessorDefinitions="_CONSOLE;Py_PYSTATE_H"
+				ForcedIncludeFiles="compat.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -109,7 +110,8 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="_CONSOLE"
+				PreprocessorDefinitions="_CONSOLE;Py_PYSTATE_H"
+				ForcedIncludeFiles="compat.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -176,7 +178,8 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="_CONSOLE"
+				PreprocessorDefinitions="_CONSOLE;Py_PYSTATE_H"
+				ForcedIncludeFiles="compat.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -244,7 +247,8 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="_CONSOLE"
+				PreprocessorDefinitions="_CONSOLE;Py_PYSTATE_H"
+				ForcedIncludeFiles="compat.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -311,8 +315,9 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="_CONSOLE"
+				PreprocessorDefinitions="_CONSOLE;Py_PYSTATE_H"
 				RuntimeLibrary="2"
+				ForcedIncludeFiles="compat.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -377,8 +382,9 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="_CONSOLE"
+				PreprocessorDefinitions="_CONSOLE;Py_PYSTATE_H"
 				RuntimeLibrary="2"
+				ForcedIncludeFiles="compat.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -443,8 +449,9 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="_CONSOLE"
+				PreprocessorDefinitions="_CONSOLE;Py_PYSTATE_H"
 				RuntimeLibrary="2"
+				ForcedIncludeFiles="compat.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -509,8 +516,9 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="_CONSOLE"
+				PreprocessorDefinitions="_CONSOLE;Py_PYSTATE_H"
 				RuntimeLibrary="2"
+				ForcedIncludeFiles="compat.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"

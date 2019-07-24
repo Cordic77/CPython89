@@ -80,8 +80,11 @@ typedef struct {
 #define _PyCoreConfig_INIT \
     (_PyCoreConfig){ \
         .install_signal_handlers = -1, \
+        .ignore_environment = -1, \
         .use_hash_seed = -1, \
         .coerce_c_locale = -1, \
+        .faulthandler = -1, \
+        .tracemalloc = -1, \
         .utf8_mode = -1, \
         .argc = -1, \
         .nmodule_search_path = -1}
@@ -90,8 +93,11 @@ typedef struct {
 static inline _PyCoreConfig C89_PyCoreConfig_INIT(void)
 { _PyCoreConfig py_core_config = {0};
   py_core_config.install_signal_handlers = -1;
+  py_core_config.ignore_environment = -1;
   py_core_config.use_hash_seed = -1;
   py_core_config.coerce_c_locale = -1;
+  py_core_config.faulthandler = -1;
+  py_core_config.tracemalloc = -1;
   py_core_config.utf8_mode = -1;
   py_core_config.argc = -1;
   py_core_config.nmodule_search_path = -1;
