@@ -1239,10 +1239,6 @@
 				>
 			</File>
 			<File
-				RelativePath="..\Modules\_asynciomodule.c"
-				>
-			</File>
-			<File
 				RelativePath="..\..\cpython\Modules\_bisectmodule.c"
 				>
 			</File>
@@ -1275,7 +1271,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\_functoolsmodule.c"
+				RelativePath="..\Modules\_functoolsmodule.c"
 				>
 			</File>
 			<File
@@ -1847,7 +1843,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Objects\sliceobject.c"
+				RelativePath="..\Objects\sliceobject.c"
 				>
 			</File>
 			<File

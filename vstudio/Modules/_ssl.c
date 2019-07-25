@@ -1520,6 +1520,10 @@ _get_crl_dp(X509 *certificate) {
         STACK_OF(GENERAL_NAME) *gns;
 
         dp = sk_DIST_POINT_value(dps, i);
+        if (dp->distpoint == NULL) {
+            /* Ignore empty DP value, CVE-2019-5010 */
+            continue;
+        }
         gns = dp->distpoint->name.fullname;
 
         for (j=0; j < sk_GENERAL_NAME_num(gns); j++) {
@@ -3630,7 +3634,11 @@ static int
 set_post_handshake_auth(PySSLContext *self, PyObject *arg, void *c) {
     int (*verify_cb)(int, X509_STORE_CTX *) = NULL;
     int mode = SSL_CTX_get_verify_mode(self->ctx);
-    int pha = PyObject_IsTrue(arg);
+    if (arg == NULL) {
+        PyErr_SetString(PyExc_AttributeError, "cannot delete attribute");
+        return -1;
+    }
+  { int pha = PyObject_IsTrue(arg);  /*C89 -- mixed declarations and code*/
 
     if (pha == -1) {
         return -1;
@@ -3647,6 +3655,7 @@ set_post_handshake_auth(PySSLContext *self, PyObject *arg, void *c) {
     } else {
         mode ^= SSL_VERIFY_POST_HANDSHAKE;
     }
+  }
     SSL_CTX_set_verify(self->ctx, mode, verify_cb);
 
     return 0;
