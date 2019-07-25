@@ -1116,6 +1116,10 @@ FutureObj_set_blocking(FutureObj *fut, PyObject *val, void *Py_UNUSED(ignored))
     if (future_ensure_alive(fut)) {
         return -1;
     }
+    if (val == NULL) {
+        PyErr_SetString(PyExc_AttributeError, "cannot delete attribute");
+        return -1;
+    }
 
   { int is_true = PyObject_IsTrue(val);  /*C89 -- mixed declarations and code*/
     if (is_true < 0) {
@@ -1141,7 +1145,11 @@ FutureObj_get_log_traceback(FutureObj *fut, void *Py_UNUSED(ignored))
 static int
 FutureObj_set_log_traceback(FutureObj *fut, PyObject *val, void *Py_UNUSED(ignored))
 {
-    int is_true = PyObject_IsTrue(val);
+    if (val == NULL) {
+        PyErr_SetString(PyExc_AttributeError, "cannot delete attribute");
+        return -1;
+    }
+  { int is_true = PyObject_IsTrue(val);  /*C89 -- mixed declarations and code*/
     if (is_true < 0) {
         return -1;
     }
@@ -1151,6 +1159,7 @@ FutureObj_set_log_traceback(FutureObj *fut, PyObject *val, void *Py_UNUSED(ignor
         return -1;
     }
     fut->fut_log_tb = is_true;
+  }
     return 0;
 }
 
@@ -2117,11 +2126,16 @@ TaskObj_get_log_destroy_pending(TaskObj *task, void *Py_UNUSED(ignored))
 static int
 TaskObj_set_log_destroy_pending(TaskObj *task, PyObject *val, void *Py_UNUSED(ignored))
 {
-    int is_true = PyObject_IsTrue(val);
+    if (val == NULL) {
+        PyErr_SetString(PyExc_AttributeError, "cannot delete attribute");
+        return -1;
+    }
+  { int is_true = PyObject_IsTrue(val);  /*C89 -- mixed declarations and code*/
     if (is_true < 0) {
         return -1;
     }
     task->task_log_destroy_pending = is_true;
+  }
     return 0;
 }
 

@@ -67,7 +67,7 @@ PyDoc_STRVAR(abc_data_doc,
 
 #if !defined(ISO_C99) || (ISO_C99 == 1)  /*C89 -- designated initializers aren't supported*/
 static PyTypeObject _abc_data_type = {
-    PyVarObject_HEAD_INIT(&PyType_Type, 0)
+    PyVarObject_HEAD_INIT(NULL, 0)
     "_abc_data",                        /*tp_name*/
     sizeof(_abc_data),                  /*tp_basicsize*/
     .tp_dealloc = (destructor)abc_data_dealloc,
@@ -77,7 +77,7 @@ static PyTypeObject _abc_data_type = {
 };
 #else
 static PyTypeObject _abc_data_type = {
-    PyVarObject_HEAD_INIT(&PyType_Type, 0)
+    PyVarObject_HEAD_INIT(NULL, 0)
     "_abc_data",                        /*tp_name*/
     sizeof(_abc_data),                  /*tp_basicsize*/
 };

@@ -535,7 +535,7 @@ pymain_init_cmdline_argv(_PyMain *pymain, _PyCoreConfig *config,
         }
 
       { int i;
-        for (/*int*/ i = 0; i < pymain->argc; i++) {
+        for (/*int*/ i = 0; i < pymain->argc; i++) {  /*C89 -- mixed declarations and code*/
             size_t len;
             wchar_t *arg = Py_DecodeLocale(pymain->bytes_argv[i], &len);
             if (arg == NULL) {
@@ -2202,6 +2202,7 @@ pymain_read_conf(_PyMain *pymain, _PyCoreConfig *config, _PyCmdline *cmdline)
             goto done;
         }
         pymain_clear_cmdline(pymain, cmdline);
+        pymain_clear_pymain(pymain);
         memset(cmdline, 0, sizeof(*cmdline));
 
         cmdline_get_global_config(cmdline);
