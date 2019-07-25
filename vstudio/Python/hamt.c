@@ -2029,7 +2029,7 @@ hamt_node_array_dump(PyHamtNode_Array *node,
             goto error;
         }
 
-        if (_hamt_dump_format(writer, "%d::\n", i)) {
+        if (_hamt_dump_format(writer, "%zd::\n", i)) {
             goto error;
         }
 
@@ -2379,7 +2379,7 @@ _PyHamt_Without(PyHamtObject *o, PyObject *key)
         return NULL;
     }
 
-  { PyHamtNode *new_root;  /*C89 -- mixed declarations and code*/
+  { PyHamtNode *new_root = NULL;  /*C89 -- mixed declarations and code*/
 
     hamt_without_t res = hamt_node_without(
         (PyHamtNode *)(o->h_root),

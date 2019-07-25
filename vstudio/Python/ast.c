@@ -4249,8 +4249,8 @@ decode_bytes_with_escapes(struct compiling *c, const node *n, const char *s,
 static void fstring_shift_node_locations(node *n, int lineno, int col_offset)
 {
     n->n_col_offset = n->n_col_offset + col_offset;
-  { int i;  /*C89 -- mixed declarations and code*/
-    for (/*int*/ i = 0; i < NCH(n); ++i) {
+  { int i;
+    for (/*int*/ i = 0; i < NCH(n); ++i) {  /*C89 -- mixed declarations and code*/
         if (n->n_lineno && n->n_lineno < CHILD(n, i)->n_lineno) {
             /* Shifting column offsets unnecessary if there's been newlines. */
             col_offset = 0;
@@ -4286,7 +4286,7 @@ fstring_fix_node_location(const node *parent, node *n, char *expr_str)
                     break;
                 start--;
             }
-            cols += substr - start;
+            cols += (int)(substr - start);
             /* Fix lineno in mulitline strings. */
             while ((substr = strchr(substr + 1, '\n')))
                 lines--;

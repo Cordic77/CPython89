@@ -673,7 +673,7 @@ fill_and_set_sslerror(PySSLSocket *sslsock, PyObject *type, int ssl_errno,
     if (msg == NULL)
         goto fail;
 
-    init_value = Py_BuildValue("iN", ssl_errno, msg);
+    init_value = Py_BuildValue("iN", ERR_GET_REASON(ssl_errno), msg);
     if (init_value == NULL)
         goto fail;
 
@@ -934,6 +934,26 @@ newPySSLSocket(PySSLContext *sslctx, PySocketSockObject *sock,
     }
     SSL_set_mode(self->ssl,
                  SSL_MODE_ACCEPT_MOVING_WRITE_BUFFER | SSL_MODE_AUTO_RETRY);
+
+#ifdef TLS1_3_VERSION
+    if (sslctx->post_handshake_auth == 1) {
+        if (socket_type == PY_SSL_SERVER) {
+            /* bpo-37428: OpenSSL does not ignore SSL_VERIFY_POST_HANDSHAKE.
+             * Set SSL_VERIFY_POST_HANDSHAKE flag only for server sockets and
+             * only in combination with SSL_VERIFY_PEER flag. */
+            int mode = SSL_get_verify_mode(self->ssl);
+            if (mode & SSL_VERIFY_PEER) {
+                int (*verify_cb)(int, X509_STORE_CTX *) = NULL;
+                verify_cb = SSL_get_verify_callback(self->ssl);
+                mode |= SSL_VERIFY_POST_HANDSHAKE;
+                SSL_set_verify(self->ssl, mode, verify_cb);
+            }
+        } else {
+            /* client socket */
+            SSL_set_post_handshake_auth(self->ssl, 1);
+        }
+    }
+#endif
 
     if (server_hostname != NULL) {
         if (_ssl_configure_hostname(self, server_hostname) < 0) {
@@ -2932,10 +2952,10 @@ _set_verify_mode(PySSLContext *self, enum py_ssl_cert_requirements n)
                         "invalid value for verify_mode");
         return -1;
     }
-#ifdef TLS1_3_VERSION
-    if (self->post_handshake_auth)
-        mode |= SSL_VERIFY_POST_HANDSHAKE;
-#endif
+
+    /* bpo-37428: newPySSLSocket() sets SSL_VERIFY_POST_HANDSHAKE flag for
+     * server sockets and SSL_set_post_handshake_auth() for client. */
+
     /* keep current verify cb */
     verify_cb = SSL_CTX_get_verify_callback(self->ctx);
     SSL_CTX_set_verify(self->ctx, mode, verify_cb);
@@ -3352,7 +3372,7 @@ _ssl__SSLContext__set_alpn_protocols_impl(PySSLContext *self,
 #if HAVE_ALPN
     if ((size_t)protos->len > UINT_MAX) {
         PyErr_Format(PyExc_OverflowError,
-            "protocols longer than %d bytes", UINT_MAX);
+            "protocols longer than %u bytes", UINT_MAX);
         return NULL;
     }
 
@@ -3632,8 +3652,6 @@ get_post_handshake_auth(PySSLContext *self, void *c) {
 #if TLS1_3_VERSION
 static int
 set_post_handshake_auth(PySSLContext *self, PyObject *arg, void *c) {
-    int (*verify_cb)(int, X509_STORE_CTX *) = NULL;
-    int mode = SSL_CTX_get_verify_mode(self->ctx);
     if (arg == NULL) {
         PyErr_SetString(PyExc_AttributeError, "cannot delete attribute");
         return -1;
@@ -3645,18 +3663,9 @@ set_post_handshake_auth(PySSLContext *self, PyObject *arg, void *c) {
     }
     self->post_handshake_auth = pha;
 
-    /* client-side socket setting, ignored by server-side */
-    SSL_CTX_set_post_handshake_auth(self->ctx, pha);
-
-    /* server-side socket setting, ignored by client-side */
-    verify_cb = SSL_CTX_get_verify_callback(self->ctx);
-    if (pha) {
-        mode |= SSL_VERIFY_POST_HANDSHAKE;
-    } else {
-        mode ^= SSL_VERIFY_POST_HANDSHAKE;
-    }
+    /* bpo-37428: newPySSLSocket() sets SSL_VERIFY_POST_HANDSHAKE flag for
+     * server sockets and SSL_set_post_handshake_auth() for client. */
   }
-    SSL_CTX_set_verify(self->ctx, mode, verify_cb);
 
     return 0;
 }
@@ -5486,8 +5495,9 @@ typedef struct _CRL_CONTEXT {
 } CRL_CONTEXT, *PCRL_CONTEXT;
 typedef const CRL_CONTEXT *PCCRL_CONTEXT;
 
-/* wincrypt.h:9396 */
+/* wincrypt.h:9383 */
 #define CERT_STORE_PROV_SYSTEM_A            ((LPCSTR) 9)
+#define CERT_STORE_PROV_COLLECTION          ((LPCSTR) 11)
 
 /* wincrypt.h:9464 */
 #define CERT_STORE_READONLY_FLAG                        0x00008000
@@ -5499,17 +5509,68 @@ typedef BOOL (WINAPI * PFN_CERTFREECERTIFICATECONTEXT) (PCCERT_CONTEXT pCertCont
 typedef PCCRL_CONTEXT (WINAPI * PFN_CERTENUMCRLSINSTORE) (HCERTSTORE hCertStore, PCCRL_CONTEXT pPrevCrlContext);
 typedef BOOL (WINAPI * PFN_CERTFREECRLCONTEXT) (PCCRL_CONTEXT pCrlContext);
 typedef BOOL (WINAPI * PFN_CERTCLOSESTORE) (HCERTSTORE hCertStore, DWORD dwFlags);
+typedef BOOL (WINAPI * PFN_CERTADDSTORETOCOLLECTION) (HCERTSTORE hCollectionStore, HCERTSTORE hSiblingStore, DWORD dwUpdateFlags, DWORD dwPriorit);
 
-/* wincrypt.h:9509 */
-#define CERT_SYSTEM_STORE_LOCAL_MACHINE_ID      2
+/* wincrypt.h:9494 */
+// By default, when the CurrentUser "Root" store is opened, any SystemRegistry
+// roots not also on the protected root list are deleted from the cache before
+// CertOpenStore() returns. Set the following flag to return all the roots
+// in the SystemRegistry without checking the protected root list.
+////#define CERT_SYSTEM_STORE_UNPROTECTED_FLAG      0x40000000
+
+////#define CERT_SYSTEM_STORE_DEFER_READ_FLAG       0x20000000
+
+// Location of the system store:
+////#define CERT_SYSTEM_STORE_LOCATION_MASK         0x00FF0000
 #define CERT_SYSTEM_STORE_LOCATION_SHIFT        16
 
+
+//  Registry: HKEY_CURRENT_USER or HKEY_LOCAL_MACHINE
+#define CERT_SYSTEM_STORE_CURRENT_USER_ID       1
+#define CERT_SYSTEM_STORE_LOCAL_MACHINE_ID      2
+//  Registry: HKEY_LOCAL_MACHINE\Software\Microsoft\Cryptography\Services
+////#define CERT_SYSTEM_STORE_CURRENT_SERVICE_ID    4
+#define CERT_SYSTEM_STORE_SERVICES_ID           5
+//  Registry: HKEY_USERS
+#define CERT_SYSTEM_STORE_USERS_ID              6
+
+//  Registry: HKEY_CURRENT_USER\Software\Policies\Microsoft\SystemCertificates
+#define CERT_SYSTEM_STORE_CURRENT_USER_GROUP_POLICY_ID    7
+//  Registry: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\SystemCertificates
+#define CERT_SYSTEM_STORE_LOCAL_MACHINE_GROUP_POLICY_ID   8
+
+//  Registry: HKEY_LOCAL_MACHINE\Software\Microsoft\EnterpriseCertificates
+#define CERT_SYSTEM_STORE_LOCAL_MACHINE_ENTERPRISE_ID     9
+
+#define CERT_SYSTEM_STORE_CURRENT_USER          \
+    (CERT_SYSTEM_STORE_CURRENT_USER_ID << CERT_SYSTEM_STORE_LOCATION_SHIFT)
 #define CERT_SYSTEM_STORE_LOCAL_MACHINE         \
     (CERT_SYSTEM_STORE_LOCAL_MACHINE_ID << CERT_SYSTEM_STORE_LOCATION_SHIFT)
+#define CERT_SYSTEM_STORE_SERVICES              \
+    (CERT_SYSTEM_STORE_SERVICES_ID << CERT_SYSTEM_STORE_LOCATION_SHIFT)
+#define CERT_SYSTEM_STORE_USERS                 \
+    (CERT_SYSTEM_STORE_USERS_ID << CERT_SYSTEM_STORE_LOCATION_SHIFT)
+
+#define CERT_SYSTEM_STORE_CURRENT_USER_GROUP_POLICY   \
+    (CERT_SYSTEM_STORE_CURRENT_USER_GROUP_POLICY_ID << \
+        CERT_SYSTEM_STORE_LOCATION_SHIFT)
+#define CERT_SYSTEM_STORE_LOCAL_MACHINE_GROUP_POLICY  \
+    (CERT_SYSTEM_STORE_LOCAL_MACHINE_GROUP_POLICY_ID << \
+        CERT_SYSTEM_STORE_LOCATION_SHIFT)
+
+#define CERT_SYSTEM_STORE_LOCAL_MACHINE_ENTERPRISE  \
+    (CERT_SYSTEM_STORE_LOCAL_MACHINE_ENTERPRISE_ID << \
+        CERT_SYSTEM_STORE_LOCATION_SHIFT)
+
+/* wincrypt.h:10819 */
+#define CERT_CLOSE_STORE_FORCE_FLAG         0x00000001
 
 /* wincrypt.h:11108 */
 #define CERT_FIND_EXT_ONLY_ENHKEY_USAGE_FLAG  0x2
 #define CERT_FIND_PROP_ONLY_ENHKEY_USAGE_FLAG 0x4
+
+/* wincrypt.h:13123 */
+#define CERT_PHYSICAL_STORE_ADD_ENABLE_FLAG                     0x1
 
 /* wincrypt.h:function declarations */
 static PFN_CERTGETENHANCEDKEYUSAGE CertGetEnhancedKeyUsage = NULL;
@@ -5519,6 +5580,7 @@ static PFN_CERTFREECERTIFICATECONTEXT CertFreeCertificateContext = NULL;
 static PFN_CERTENUMCRLSINSTORE CertEnumCRLsInStore = NULL;
 static PFN_CERTFREECRLCONTEXT CertFreeCRLContext = NULL;
 static PFN_CERTCLOSESTORE CertCloseStore = NULL;
+static PFN_CERTADDSTORETOCOLLECTION CertAddStoreToCollection = NULL;
 #endif
 
 static PyObject*
@@ -5576,6 +5638,68 @@ parseKeyUsage(PCCERT_CONTEXT pCertCtx, DWORD flags)
     return retval;
 }
 
+static HCERTSTORE
+ssl_collect_certificates(const char *store_name)
+{
+/* this function collects the system certificate stores listed in
+ * system_stores into a collection certificate store for being
+ * enumerated. The store must be readable to be added to the
+ * store collection.
+ */
+
+    HCERTSTORE hCollectionStore = NULL, hSystemStore = NULL;
+    static DWORD system_stores[] = {
+        CERT_SYSTEM_STORE_LOCAL_MACHINE,
+        CERT_SYSTEM_STORE_LOCAL_MACHINE_ENTERPRISE,
+        CERT_SYSTEM_STORE_LOCAL_MACHINE_GROUP_POLICY,
+        CERT_SYSTEM_STORE_CURRENT_USER,
+        CERT_SYSTEM_STORE_CURRENT_USER_GROUP_POLICY,
+        CERT_SYSTEM_STORE_SERVICES,
+        CERT_SYSTEM_STORE_USERS};
+    size_t i, storesAdded;
+    BOOL result;
+
+    hCollectionStore = CertOpenStore(CERT_STORE_PROV_COLLECTION, 0,
+                                     (HCRYPTPROV)NULL, 0, NULL);
+    if (!hCollectionStore) {
+        return NULL;
+    }
+    storesAdded = 0;
+    for (i = 0; i < sizeof(system_stores) / sizeof(DWORD); i++) {
+        hSystemStore = CertOpenStore(CERT_STORE_PROV_SYSTEM_A, 0,
+                                     (HCRYPTPROV)NULL,
+                                     CERT_STORE_READONLY_FLAG |
+                                     system_stores[i], store_name);
+        if (hSystemStore) {
+            result = CertAddStoreToCollection(hCollectionStore, hSystemStore,
+                                     CERT_PHYSICAL_STORE_ADD_ENABLE_FLAG, 0);
+            if (result) {
+                ++storesAdded;
+            }
+        }
+    }
+    if (storesAdded == 0) {
+        CertCloseStore(hCollectionStore, CERT_CLOSE_STORE_FORCE_FLAG);
+        return NULL;
+    }
+
+    return hCollectionStore;
+}
+
+/* code from Objects/listobject.c */
+
+static int
+list_contains(PyListObject *a, PyObject *el)
+{
+    Py_ssize_t i;
+    int cmp;
+
+    for (i = 0, cmp = 0 ; cmp == 0 && i < Py_SIZE(a); ++i)
+        cmp = PyObject_RichCompareBool(el, PyList_GET_ITEM(a, i),
+                                           Py_EQ);
+    return cmp;
+}
+
 /*[clinic input]
 _ssl.enum_certificates
     store_name: str
@@ -5593,7 +5717,7 @@ static PyObject *
 _ssl_enum_certificates_impl(PyObject *module, const char *store_name)
 /*[clinic end generated code: output=5134dc8bb3a3c893 input=915f60d70461ea4e]*/
 {
-    HCERTSTORE hStore = NULL;
+    HCERTSTORE hCollectionStore = NULL;
     PCCERT_CONTEXT pCertCtx = NULL;
     PyObject *keyusage = NULL, *cert = NULL, *enc = NULL, *tup = NULL;
     PyObject *result = NULL;
@@ -5602,15 +5726,13 @@ _ssl_enum_certificates_impl(PyObject *module, const char *store_name)
     if (result == NULL) {
         return NULL;
     }
-    hStore = CertOpenStore(CERT_STORE_PROV_SYSTEM_A, 0, (HCRYPTPROV)NULL,
-                            CERT_STORE_READONLY_FLAG | CERT_SYSTEM_STORE_LOCAL_MACHINE,
-                            store_name);
-    if (hStore == NULL) {
+    hCollectionStore = ssl_collect_certificates(store_name);
+    if (hCollectionStore == NULL) {
         Py_DECREF(result);
         return PyErr_SetFromWindowsErr(GetLastError());
     }
 
-    while (pCertCtx = CertEnumCertificatesInStore(hStore, pCertCtx)) {
+    while (pCertCtx = CertEnumCertificatesInStore(hCollectionStore, pCertCtx)) {
         cert = PyBytes_FromStringAndSize((const char*)pCertCtx->pbCertEncoded,
                                             pCertCtx->cbCertEncoded);
         if (!cert) {
@@ -5640,9 +5762,11 @@ _ssl_enum_certificates_impl(PyObject *module, const char *store_name)
         enc = NULL;
         PyTuple_SET_ITEM(tup, 2, keyusage);
         keyusage = NULL;
-        if (PyList_Append(result, tup) < 0) {
-            Py_CLEAR(result);
-            break;
+        if (!list_contains((PyListObject*)result, tup)) {
+            if (PyList_Append(result, tup) < 0) {
+                Py_CLEAR(result);
+                break;
+            }
         }
         Py_CLEAR(tup);
     }
@@ -5657,11 +5781,15 @@ _ssl_enum_certificates_impl(PyObject *module, const char *store_name)
     Py_XDECREF(keyusage);
     Py_XDECREF(tup);
 
-    if (!CertCloseStore(hStore, 0)) {
+    /* CERT_CLOSE_STORE_FORCE_FLAG forces freeing of memory for all contexts
+       associated with the store, in this case our collection store and the
+       associated system stores. */
+    if (!CertCloseStore(hCollectionStore, CERT_CLOSE_STORE_FORCE_FLAG)) {
         /* This error case might shadow another exception.*/
         Py_XDECREF(result);
         return PyErr_SetFromWindowsErr(GetLastError());
     }
+
     return result;
 }
 
@@ -5681,7 +5809,7 @@ static PyObject *
 _ssl_enum_crls_impl(PyObject *module, const char *store_name)
 /*[clinic end generated code: output=bce467f60ccd03b6 input=a1f1d7629f1c5d3d]*/
 {
-    HCERTSTORE hStore = NULL;
+    HCERTSTORE hCollectionStore = NULL;
     PCCRL_CONTEXT pCrlCtx = NULL;
     PyObject *crl = NULL, *enc = NULL, *tup = NULL;
     PyObject *result = NULL;
@@ -5690,15 +5818,13 @@ _ssl_enum_crls_impl(PyObject *module, const char *store_name)
     if (result == NULL) {
         return NULL;
     }
-    hStore = CertOpenStore(CERT_STORE_PROV_SYSTEM_A, 0, (HCRYPTPROV)NULL,
-                            CERT_STORE_READONLY_FLAG | CERT_SYSTEM_STORE_LOCAL_MACHINE,
-                            store_name);
-    if (hStore == NULL) {
+    hCollectionStore = ssl_collect_certificates(store_name);
+    if (hCollectionStore == NULL) {
         Py_DECREF(result);
         return PyErr_SetFromWindowsErr(GetLastError());
     }
 
-    while (pCrlCtx = CertEnumCRLsInStore(hStore, pCrlCtx)) {
+    while (pCrlCtx = CertEnumCRLsInStore(hCollectionStore, pCrlCtx)) {
         crl = PyBytes_FromStringAndSize((const char*)pCrlCtx->pbCrlEncoded,
                                             pCrlCtx->cbCrlEncoded);
         if (!crl) {
@@ -5718,9 +5844,11 @@ _ssl_enum_crls_impl(PyObject *module, const char *store_name)
         PyTuple_SET_ITEM(tup, 1, enc);
         enc = NULL;
 
-        if (PyList_Append(result, tup) < 0) {
-            Py_CLEAR(result);
-            break;
+        if (!list_contains((PyListObject*)result, tup)) {
+            if (PyList_Append(result, tup) < 0) {
+                Py_CLEAR(result);
+                break;
+            }
         }
         Py_CLEAR(tup);
     }
@@ -5734,7 +5862,10 @@ _ssl_enum_crls_impl(PyObject *module, const char *store_name)
     Py_XDECREF(enc);
     Py_XDECREF(tup);
 
-    if (!CertCloseStore(hStore, 0)) {
+    /* CERT_CLOSE_STORE_FORCE_FLAG forces freeing of memory for all contexts
+       associated with the store, in this case our collection store and the
+       associated system stores. */
+    if (!CertCloseStore(hCollectionStore, CERT_CLOSE_STORE_FORCE_FLAG)) {
         /* This error case might shadow another exception.*/
         Py_XDECREF(result);
         return PyErr_SetFromWindowsErr(GetLastError());
@@ -5916,6 +6047,7 @@ PyInit__ssl(void)
       CertEnumCRLsInStore = (PFN_CERTENUMCRLSINSTORE)GetProcAddress(hCrypt32dll, "CertEnumCRLsInStore");
       CertFreeCRLContext = (PFN_CERTFREECRLCONTEXT)GetProcAddress(hCrypt32dll, "CertFreeCRLContext");
       CertCloseStore = (PFN_CERTCLOSESTORE)GetProcAddress(hCrypt32dll, "CertCloseStore");
+      CertAddStoreToCollection = (PFN_CERTADDSTORETOCOLLECTION)GetProcAddress(hCrypt32dll, "CertAddStoreToCollection");
 
       if (CertGetEnhancedKeyUsage == NULL
        || CertOpenStore == NULL
@@ -5924,6 +6056,7 @@ PyInit__ssl(void)
        || CertEnumCRLsInStore == NULL
        || CertFreeCRLContext == NULL
        || CertCloseStore == NULL
+       || CertAddStoreToCollection == NULL
          )
       {
         FreeLibrary (hCrypt32dll);

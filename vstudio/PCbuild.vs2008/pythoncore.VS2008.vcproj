@@ -1391,7 +1391,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\parsermodule.c"
+				RelativePath="..\Modules\parsermodule.c"
 				>
 			</File>
 			<File
@@ -2075,7 +2075,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Python\errors.c"
+				RelativePath="..\Python\errors.c"
 				>
 			</File>
 			<File
@@ -2199,7 +2199,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Python\dtoa.c"
+				RelativePath="..\Python\dtoa.c"
 				>
 			</File>
 			<File

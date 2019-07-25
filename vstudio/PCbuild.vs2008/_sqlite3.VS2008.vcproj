@@ -42,7 +42,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="$(sqlite3Dir)"
+				AdditionalIncludeDirectories="$(sqlite3Dir);..\..\cpython\Modules\_sqlite"
 				PreprocessorDefinitions="MODULE_NAME=\&quot;sqlite3\&quot;;SQLITE_VERSION=3.28.0.0;SQLITE_MAJOR_VERSION=3;SQLITE_MINOR_VERSION=28;SQLITE_MICRO_VERSION=0;SQLITE_PATCH_VERSION=0"
 				ProgramDataBaseFileName="$(IntDir)\$(TargetName).pdb"
 			/>
@@ -107,7 +107,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="$(sqlite3Dir)"
+				AdditionalIncludeDirectories="$(sqlite3Dir);..\..\cpython\Modules\_sqlite"
 				PreprocessorDefinitions="MODULE_NAME=\&quot;sqlite3\&quot;;SQLITE_VERSION=3.28.0.0;SQLITE_MAJOR_VERSION=3;SQLITE_MINOR_VERSION=28;SQLITE_MICRO_VERSION=0;SQLITE_PATCH_VERSION=0"
 				ProgramDataBaseFileName="$(IntDir)\$(TargetName).pdb"
 			/>
@@ -172,7 +172,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="$(sqlite3Dir)"
+				AdditionalIncludeDirectories="$(sqlite3Dir);..\..\cpython\Modules\_sqlite"
 				PreprocessorDefinitions="MODULE_NAME=\&quot;sqlite3\&quot;;SQLITE_VERSION=3.28.0.0;SQLITE_MAJOR_VERSION=3;SQLITE_MINOR_VERSION=28;SQLITE_MICRO_VERSION=0;SQLITE_PATCH_VERSION=0"
 				ProgramDataBaseFileName="$(IntDir)\$(TargetName).pdb"
 			/>
@@ -238,7 +238,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="$(sqlite3Dir)"
+				AdditionalIncludeDirectories="$(sqlite3Dir);..\..\cpython\Modules\_sqlite"
 				PreprocessorDefinitions="MODULE_NAME=\&quot;sqlite3\&quot;;SQLITE_VERSION=3.28.0.0;SQLITE_MAJOR_VERSION=3;SQLITE_MINOR_VERSION=28;SQLITE_MICRO_VERSION=0;SQLITE_PATCH_VERSION=0"
 				ProgramDataBaseFileName="$(IntDir)\$(TargetName).pdb"
 			/>
@@ -303,7 +303,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="$(sqlite3Dir)"
+				AdditionalIncludeDirectories="$(sqlite3Dir);..\..\cpython\Modules\_sqlite"
 				PreprocessorDefinitions="MODULE_NAME=\&quot;sqlite3\&quot;;SQLITE_VERSION=3.28.0.0;SQLITE_MAJOR_VERSION=3;SQLITE_MINOR_VERSION=28;SQLITE_MICRO_VERSION=0;SQLITE_PATCH_VERSION=0"
 			/>
 			<Tool
@@ -365,7 +365,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="$(sqlite3Dir)"
+				AdditionalIncludeDirectories="$(sqlite3Dir);..\..\cpython\Modules\_sqlite"
 				PreprocessorDefinitions="MODULE_NAME=\&quot;sqlite3\&quot;;SQLITE_VERSION=3.28.0.0;SQLITE_MAJOR_VERSION=3;SQLITE_MINOR_VERSION=28;SQLITE_MICRO_VERSION=0;SQLITE_PATCH_VERSION=0"
 			/>
 			<Tool
@@ -427,7 +427,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="$(sqlite3Dir)"
+				AdditionalIncludeDirectories="$(sqlite3Dir);..\..\cpython\Modules\_sqlite"
 				PreprocessorDefinitions="MODULE_NAME=\&quot;sqlite3\&quot;;SQLITE_VERSION=3.28.0.0;SQLITE_MAJOR_VERSION=3;SQLITE_MINOR_VERSION=28;SQLITE_MICRO_VERSION=0;SQLITE_PATCH_VERSION=0"
 			/>
 			<Tool
@@ -489,7 +489,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="$(sqlite3Dir)"
+				AdditionalIncludeDirectories="$(sqlite3Dir);..\..\cpython\Modules\_sqlite"
 				PreprocessorDefinitions="MODULE_NAME=\&quot;sqlite3\&quot;;SQLITE_VERSION=3.28.0.0;SQLITE_MAJOR_VERSION=3;SQLITE_MINOR_VERSION=28;SQLITE_MICRO_VERSION=0;SQLITE_PATCH_VERSION=0"
 			/>
 			<Tool
@@ -579,7 +579,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\_sqlite\connection.c"
+				RelativePath="..\Modules\_sqlite\connection.c"
 				>
 			</File>
 			<File
