@@ -523,7 +523,7 @@
 			Name="Source Files"
 			>
 			<File
-				RelativePath="..\..\cpython\Modules\_ctypes\_ctypes_test.c"
+				RelativePath="..\Modules\_ctypes\_ctypes_test.c"
 				>
 			</File>
 		</Filter>

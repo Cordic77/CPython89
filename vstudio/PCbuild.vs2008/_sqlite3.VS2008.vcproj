@@ -599,7 +599,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\cpython\Modules\_sqlite\row.c"
+				RelativePath="..\Modules\_sqlite\row.c"
 				>
 			</File>
 			<File

@@ -1995,7 +1995,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\PC\winreg.c"
+				RelativePath="..\..\cpython\PC\winreg.c"
 				>
 			</File>
 			<File

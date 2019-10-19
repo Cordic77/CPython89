@@ -162,7 +162,7 @@
    argument size specifiers (such as hh, z, j and t), that aren't
    supported by ANSIC C compilers -- the following header replaces
    all references to printf() and scanf() by variants prefixed with
-   "c99_" who are aware of these modifiers:
+   "c99_" which are aware of these modifiers:
 */
 #include "c99fmtio.h"
 
